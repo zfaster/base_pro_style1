@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="base_pro_style1"
+  id="myeclipse.1342687565015"
+  context-root="/BigShop"
+  j2ee-spec="5.0"
+  archive="base_pro_style1.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,453 @@
+.top-act {
+	float: right
+}
+
+.top-line {
+	position: relative
+}
+
+.mustknow {
+	background:
+		url() 0
+		0 no-repeat;
+	padding-left: 20px
+}
+
+.hoverbox {
+	background: #fff;
+	border: 1px solid #999;
+	padding: 10px;
+	width: 520px;
+	position: absolute;
+	right: 10px;
+	z-index: 9999;
+	top: 20px;
+	display: none;
+	box-shadow: #ddd 2px 3px 5px
+}
+
+.hoverbox strong {
+	color: red
+}
+
+.comment {
+	padding: 10px 5px;
+	color: #333
+}
+
+.comment .title {
+	font-weight: bold
+}
+
+.comment .date {
+	color: #999
+}
+
+.comment .meta {
+	margin: 5px 0
+}
+
+.comment .meta .nk {
+	margin: 0 5px 0 0;
+	font-weight: bold
+}
+
+.sellercomment {
+	color: #960
+}
+
+.ph-label {
+	color: #AAA;
+	position: absolute;
+	padding: 0;
+	*padding-top: 3px;
+	line-height: 1.2;
+	opacity: 1;
+	filter: alpha(opacity = 100);
+	-webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-ms-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	transition: all .2s ease-out
+}
+
+.nojs .ph-label {
+	display: none
+}
+
+.ph-hide .ph-label {
+	opacity: 0;
+	filter: alpha(opacity = 0)
+}
+
+.ph-focus .ph-label {
+	color: #EEE
+}
+
+.line {
+	margin-bottom: 10px
+}
+
+.rate-icon {
+	background-image: url();
+	background-repeat: no-repeat;
+	background-position: url()
+		1000px;
+	padding-left: 25px;
+	margin-right: 10px;
+	display: inline-block;
+	height: 18px;
+	line-height: 18px
+}
+
+.rate-ok {
+	background-position: -237px -104px
+}
+
+.rate-normal {
+	background-position: -236px -244px
+}
+
+.rate-bad {
+	background-position: -236px -174px
+}
+
+.ad-block {
+	margin: 10px 0;
+	position: relative
+}
+
+.ad-block img {
+	display: block
+}
+
+.ks-overlay {
+	position: absolute;
+	left: -9999px;
+	top: -9999px
+}
+
+.dashedborder {
+	background:
+		url() 50%
+		100% repeat-x
+}
+
+.c-value-no,.c-value-no em {
+	background:
+		url("")
+		-66px -12px repeat;
+	height: 12px;
+	width: 58px;
+	display: inline-block;
+	font-size: 0;
+	line-height: 0
+}
+
+.c-value-no {
+	margin-top: 3px;
+	margin-right: 5px
+}
+
+.c-value-no em {
+	background-position: -66px 0
+}
+
+.c-value-0 em {
+	width: 0
+}
+
+.c-value-0d1 em,.c-value-0d2 em,.c-value-0d3 em,.c-value-0d4 em,.c-value-0d5 em,.c-value-0d6 em,.c-value-0d7 em,.c-value-0d8 em,.c-value-0d9 em
+	{
+	width: 5px
+}
+
+.c-value-1 em {
+	width: 12px
+}
+
+.c-value-1d1,.c-value-1d2 em,.c-value-1d3 em,.c-value-1d4 em,.c-value-1d5 em,.c-value-1d6 em,.c-value-1d7 em,.c-value-1d8 em,.c-value-1d9 em
+	{
+	width: 17px
+}
+
+.c-value-2 em {
+	width: 24px
+}
+
+.c-value-2d1 em,.c-value-2d2 em,.c-value-2d3 em,.c-value-2d4 em,.c-value-2d5 em,.c-value-2d6 em,.c-value-2d7 em,.c-value-2d8 em,.c-value-2d9 em
+	{
+	width: 29px
+}
+
+.c-value-3 em {
+	width: 36px
+}
+
+.c-value-3d1 em,.c-value-3d2 em,.c-value-3d3 em,.c-value-3d4 em,.c-value-3d5 em,.c-value-3d6 em,.c-value-3d7 em,.c-value-3d8 em,.c-value-3d9 em
+	{
+	width: 41px
+}
+
+.c-value-4 em {
+	width: 48px
+}
+
+.c-value-4d1 em,.c-value-4d2 em,.c-value-4d3 em,em.c-value-4d4,.c-value-4d5 em,.c-value-4d6 em,.c-value-4d7 em,.c-value-4d8 em,.c-value-4d9 em
+	{
+	width: 53px
+}
+
+.shopdetail {
+	position: relative;
+	color: #404040;
+	padding: 18px 0;
+	background-image:
+		url();
+	background-repeat: no-repeat;
+	background-position: 0 -18px;
+	background-repeat: repeat-x;
+	background-color: #f1f5f8;
+	height: 72px;
+	border: 1px solid #c4d5df
+}
+
+.shopdetail .tips {
+	position: absolute;
+	right: 20px;
+	width: 430px;
+	bottom: 15px
+}
+
+.shopdetail .hd {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 110px;
+	width: 39px;
+	line-height: 1.2em;
+	background-image:
+		url();
+	background-repeat: no-repeat;
+	background-position: 24px -159px
+}
+
+.shopdetail .hd h3 {
+	width: 1em;
+	padding-top: 25px;
+	margin-left: 10px;
+	color: #666;
+	font-weight: normal
+}
+
+.shopdetail .bd {
+	padding-left: 100px;
+	margin-left: 39px
+}
+
+.shopdetail .bd .shop-logo {
+	float: left;
+	width: 70px;
+	height: 70px;
+	margin-left: -80px
+}
+
+.shopdetail .rank-icon {
+	margin-right: 10px
+}
+
+.shopdetail .rank-icon img {
+	vertical-align: middle
+}
+
+.itemlist {
+	border: 1px solid #c4d5df
+}
+
+.itemlist input {
+	vertical-align: text-bottom;
+	margin-right: 5px
+}
+
+.listhd {
+	position: relative
+}
+
+.listhd h3 {
+	background-image:
+		url();
+	background-repeat: no-repeat;
+	background-position: 0 -134px;
+	background-repeat: repeat-x;
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+	padding-left: 12px;
+	background-color: #f2f7fa;
+	border-bottom: 1px solid #c4d5df
+}
+
+.listhd .act {
+	right: 5px;
+	top: 3px;
+	position: absolute
+}
+
+.listhd .act label {
+	vertical-align: middle
+}
+
+.listhd .act input {
+	margin-right: 3px;
+	vertical-align: middle
+}
+
+.listbd input {
+	vertical-align: middle
+}
+
+.item-detail {
+	overflow: hidden;
+	margin: 10px 0 0 10px;
+	zoom: 1
+}
+
+.item-detail h3 {
+	font-size: 12px;
+	word-wrap: break-word;
+	wordk-break: break-all;
+	margin-bottom: 10px
+}
+
+.item-detail .item-d-img {
+	float: left;
+	margin-right: 10px;
+	width: 60px
+}
+
+.item-detail p {
+	color: #999
+}
+
+table.commentplus {
+	width: 100%
+}
+
+table.commentplus th,table.commentplus td {
+	padding: 7px 10px
+}
+
+table.commentplus thead th {
+	background: #dedede
+}
+
+table.commentplus tbody td {
+	background:
+		url() 50%
+		100% repeat-x;
+	padding: 7px 10px 20px;
+	vertical-align: top
+}
+
+.addcomment {
+	background-image: url();
+	background-repeat: no-repeat;
+	background-position: 1000px 1000px;
+	padding-left: 20px;
+	background-position: 0 -71px
+}
+
+.rate-msg-box {
+	display: none;
+	width: 452px
+}
+
+.rate-msg-box .textinput {
+	padding: 8px;
+	border: 1px solid #abadb3
+}
+
+.rate-msg-box .ks-placeholder {
+	position: absolute
+}
+
+.rate-msg-box .text-counter strong {
+	color: #f60;
+	margin: 0 5px
+}
+
+.rate-msg-box .ph-label {
+	width: 400px;
+	line-height: 1.5;
+	display: block
+}
+
+.rate-msg-box .rate-msg {
+	width: 100%;
+	_width: 434px;
+	height: 132px;
+	border: 0;
+	outline: 0;
+	resize: none
+}
+
+.rate-msg-box .ft {
+	position: relative;
+	padding: 2px
+}
+
+.rate-msg-box .close-msg-box {
+	display: inline-block;
+	width: 70px;
+	height: 18px;
+	text-indent: -9999px;
+	background-image: url();
+	background-repeat: no-repeat;
+	background-position: 0 -243px
+}
+
+.rate-msg-box .close-msg-box:hover {
+	background-image: url();
+	background-repeat: no-repeat;
+	background-position: 0 -214px
+}
+
+.rate-msg-box .add-comment {
+	background-image: url();
+	background-repeat: no-repeat;
+	background-position: 0 -71px
+}
+
+.rate-msg-box .msg {
+	margin: 10px 0
+}
+
+.st-show-msg-box .rate-msg-box {
+	display: block
+}
+
+.st-show-msg-box .rate-msg-handle {
+	display: none
+}
+
+span.like {
+	font-weight: bold
+}
+
+span.like strong {
+	color: #f60;
+	font-weight: normal
+}
+
+.submitbox {
+	padding-left: 390px;
+	margin: 10px 0
+}
+
+.submitbox button {
+	margin-right: 5px
+}
+
+.form-msg {
+	margin: 20px 0 0 390px
+}
