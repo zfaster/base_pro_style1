@@ -1,5 +1,5 @@
 /WebRoot/WEB-INF/classes
-
+lib
 
 # Maven #
 target/
@@ -12,5 +12,7 @@ out/
 # Eclipse #
 .settings/
 .classpath
+.myeclipse
 .project
+.mymetadata
 
