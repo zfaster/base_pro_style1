@@ -16,9 +16,9 @@ A.close:hover {
 .selectFrm {
 	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 9pt; BORDER-BOTTOM-WIDTH: 1px; WIDTH: 80%; BORDER-RIGHT-WIDTH: 1px; FONT-COLOR: #FFFFFF
 }
-.PageBody {
+/*.PageBody {
 	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#35577d,endColorStr=#FFFFFF); BACKGROUND-COLOR: #35577d
-}
+}*/
 .UpTr {
 	BACKGROUND: #ebebeb
 }
