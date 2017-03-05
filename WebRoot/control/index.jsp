@@ -31,9 +31,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li id="left_tab1" class="Selected" onClick="javascript:border_left('TabPage2','left_tab1');" title="系统">系统</li>
 				<li id="left_tab2" onClick="javascript:border_left('TabPage2','left_tab2');" title="学生">学生</li>
 				<li id="left_tab3" onClick="javascript:border_left('TabPage2','left_tab3');" title="相册">消费</li>
-				<li id="left_tab7" onClick="javascript:border_left('TabPage2','left_tab7');" title="订阅">订阅</li>
-				<li id="left_tab4" onClick="javascript:border_left('TabPage2','left_tab4');" title="文件">文件</li>
-				<li id="left_tab5" onClick="javascript:border_left('TabPage2','left_tab5');" title="模板">模板</li>
 			</ul>
 			<div id="left_menu_cnt">
 				<ul id="dleft_tab1">
@@ -47,23 +44,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li id="now51"><a href="control/cost/costItem?costType=SHOP" onClick="go_cmdurl('超市消费',this)" target="content1" title="超市消费">超市消费</a></li>
 					<li id="now51"><a href="control/cost/costItem?costType=EAT" onClick="go_cmdurl('食堂消费',this)" target="content1" title="食堂消费">食堂消费</a></li>
 					<li id="now22"><a href="control/cost/waterLog" onClick="go_cmdurl('用水消费',this)" target="content1" title="用水消息">用水消费</a></li>
-					<li id="now22"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('用电消费',this)" target="content1" title="用电消费">用电消费</a></li>
-					<li id="now24"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('图书借阅',this)" target="content1" title="图书借阅">图书借阅</a></li>
-				</ul>
-				<ul id="dleft_tab4" style="display:none;">
-					<li id="now41"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('所有文件',this)" target="content1" title="所有文件">所有文件</a></li>
-					<li id="now42"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('图片文件',this)" target="content1" title="图片文件">图片文件</a></li>
-					<li id="now43"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('压缩文件',this)" target="content1" title="压缩文件">压缩文件</a></li>
-					<li id="now44"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('文档文件',this)" target="content1" title="文档文件">文档文件</a></li>
-				</ul>
-				<ul id="dleft_tab5" style="display:none;">
-					<li id="now51"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('选择模板',this)" target="content1" title="选择模板">选择模板</a></li>
-					<li id="now52"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('改主模板',this)" target="content1" title="改主模板">改主模板</a></li>
-					<li id="now53"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('改副模板',this)" target="content1" title="改副模板">改副模板</a></li>
-					<li id="now54"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('备份模板',this)" target="content1" title="备份模板">备份模板</a></li>
-				</ul>
-				<ul id="dleft_tab7" style="display:none;">
-				<li>正在加载...</li>	
+					<li id="now22"><a href="" onClick="go_cmdurl('用电消费',this)" target="content1" title="用电消费">用电消费</a></li>
+					<li id="now24"><a href="" onClick="go_cmdurl('图书借阅',this)" target="content1" title="图书借阅">图书借阅</a></li>
 				</ul>
 			</div>
 			<div class="clear"></div>

@@ -87,7 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.card.no"/></div></td>
           <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:date name="#obj.beginTime" format="yyyy-MM-dd HH:mm:ss"/></div></td>
           <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:date name="#obj.endTime" format="yyyy-MM-dd HH:mm:ss"/></div></td>
-          <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.cost"/></div></td>
+          <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><span style="color: red">-<s:property value="#obj.cost"/></span></div></td>
           <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
               <s:if test="#obj.endTime==null">
                   <a href="javascript:endUse('${actionPath}!endUseWater?cardId=<s:property value="#obj.card.id"/>')" title=""> 结束使用</a>

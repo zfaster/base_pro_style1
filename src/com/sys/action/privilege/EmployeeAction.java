@@ -1,26 +1,21 @@
 package com.sys.action.privilege;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.UUID;
-
-import javax.annotation.Resource;
-
+import com.sys.bean.privilege.Employee;
+import com.sys.service.base.DAO;
+import com.sys.service.employee.EmployeeService;
+import com.sys.web.action.BaseAction;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.sys.bean.privilege.Employee;
-import com.sys.service.base.DAO;
-import com.sys.service.employee.DepartmentService;
-import com.sys.service.employee.EmployeeService;
-import com.sys.web.action.BaseAction;
+import javax.annotation.Resource;
+import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.UUID;
 @Controller
 @Scope("prototype")
 public class EmployeeAction extends BaseAction<Employee> {
@@ -37,8 +32,6 @@ public class EmployeeAction extends BaseAction<Employee> {
 	private int employeeId;
 	private int[] groupId;
 	private String error;
-	@Resource
-	private DepartmentService departmentService;
 	@Override
 	public String execute() throws Exception {
 		LinkedHashMap<String, String> orderBy = new LinkedHashMap<String, String>();
@@ -69,9 +62,6 @@ public class EmployeeAction extends BaseAction<Employee> {
 	
 	public String update() throws Exception {
 		if(id == null){
-			if(departmentId > 0){
-				object.setDepartment(departmentService.find(departmentId));
-			}
 			baseService.save(object);
 			if(image != null){
 				if(!checkFileType(imageContentType,imageFileName)) throw new RuntimeException("请上传图片文件");
@@ -91,9 +81,6 @@ public class EmployeeAction extends BaseAction<Employee> {
 				if(oldFile.exists()){
 					oldFile.delete();
 				}
-			}
-			if(departmentId > 0){
-				oldEmployee.setDepartment(departmentService.find(departmentId));
 			}
 			injectProperties(oldEmployee, object);
 			if(image != null){
@@ -235,12 +222,5 @@ public class EmployeeAction extends BaseAction<Employee> {
 		this.imageContentType = imageContentType;
 	}
 
-	public DepartmentService getDepartmentService() {
-		return departmentService;
-	}
 
-	public void setDepartmentService(DepartmentService departmentService) {
-		this.departmentService = departmentService;
-	}
-	
 }

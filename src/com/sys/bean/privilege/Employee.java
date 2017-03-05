@@ -49,10 +49,7 @@ public class Employee {
 	@Column
 	@Renewable(false)
 	private int sex;
-	@ManyToOne
-	@JoinColumn(name="department_id")
-	private Department department;
-	
+
 	/**
 	 * 获得图片保存路径
 	 * @return
@@ -126,12 +123,6 @@ public class Employee {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-	public Department getDepartment() {
-		return department;
-	}
-	public void setDepartment(Department department) {
-		this.department = department;
 	}
 	public String getImage() {
 		return image;

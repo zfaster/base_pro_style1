@@ -102,7 +102,6 @@ function changState(button){
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">性别</span></div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">联系电话</span></div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">照片</span></div></td>
-        <td width="15%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">所在部门</span></div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">基本操作</span></div></td>
       </tr>
       <s:if test="pm.datas != null">
@@ -132,7 +131,6 @@ function changState(button){
         			</s:else>
         			
         			</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#employee.department.name"/></div></td>
         <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
         <a href="javascript:del('${actionPath}!delete?ids=<s:property value="#employee.id"/>')" title="">删除</a> |
         <a href="javascript:openWin('${actionPath}!updateInput?id=<s:property value="#employee.id"/>','更新员工',600,200,1)" title="">编辑</a>
