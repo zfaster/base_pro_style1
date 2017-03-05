@@ -1,127 +1,91 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
 
 <struts>
-			<constant name="struts.i18n.encoding" value="utf-8"></constant>
-			<constant name="struts.devMode" value="false"></constant>
-			<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
-			<constant name="struts.ui.theme" value="simple" />
+    <constant name="struts.i18n.encoding" value="utf-8"></constant>
+    <constant name="struts.devMode" value="false"></constant>
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+    <constant name="struts.ui.theme" value="simple"/>
 
-			<package name="abstract" extends="struts-default">
-						<interceptors>
-									<interceptor name="pagerInter"
-												class="com.sys.interceptor.PagerInterceptor">
-									</interceptor>
-									<interceptor-stack name="baseInter">
-												<interceptor-ref name="defaultStack"></interceptor-ref>
-												<interceptor-ref name="pagerInter"></interceptor-ref>
-									</interceptor-stack>
-						</interceptors>
-						<default-interceptor-ref name="baseInter"></default-interceptor-ref>
-						<global-results>
-									<result name="add_success">/control/common/add_success.jsp</result>
-									<result name="del_success">/control/common/del_success.jsp</result>
-									<result name="update_success">/control/common/update_success.jsp</result>
-									<result name="runtimeException">/control/common/error.jsp</result>
-									<result name="login">/control/login.jsp</result>
-									<result name="input">/control/common/input.jsp</result>
-						</global-results>
-						<global-exception-mappings>
-									<exception-mapping result="runtimeException"
-												exception="java.lang.RuntimeException"></exception-mapping>
-						</global-exception-mappings>
-						<action name="index">
-									<result type="redirectAction">
-												<param name="actionName">product</param>
-												<param name="namespace">/frontSite</param>
-									</result>
-									<interceptor-ref name="defaultStack"></interceptor-ref>
-									<interceptor-ref name="pagerInter"></interceptor-ref>
-						</action>
-			</package>
-			<package name="privilege" namespace="/control/privilege"
-						extends="abstract">
-						<action name="department" class="departmentAction">
-									<result>/control/privilege/department_list.jsp</result>
-									<result name="select">/control/privilege/selectDepartment_list.jsp
-									</result>
-						</action>
-						<action name="employee" class="employeeAction">
-									<result name="login_success" type="redirect">/control/index.jsp
-									</result>
-									<result name="login_fail">/control/login.jsp</result>
-									<result name="input">/control/privilege/employee_input.jsp
-									</result>
-									<result name="success">/control/privilege/employee_list.jsp
-									</result>
-						</action>
-			</package>
-			<!-- <package name="yqlj" namespace="/control/yqlj" extends="abstract"> 
-						<action name="yqlj" class="yqljAction"> <result name="success">/control/yqlj/yqlj_list.jsp</result> 
-						</action> </package> <package name="front_yqlj" namespace="/front/yqlj" extends="abstract"> 
-						<action name="yqlj" class="yqljAction"> <result name="success">/front/yqlj/yqlj_list.jsp</result> 
-						</action> </package> <package name="xsjl" namespace="/control/xsjl" extends="abstract"> 
-						<action name="xsjl" class="xsjlAction"> <result name="success">/control/xsjl/xsjl_list.jsp</result> 
-						<result name="input">/control/xsjl/xsjl_input.jsp</result> </action> </package> 
-						<package name="sysgk" namespace="/control/sysgk" extends="abstract"> <action 
-						name="sysgk" class="sysgkAction"> <result name="success">/control/sysgk/sysgk_list.jsp</result> 
-						<result name="input">/control/sysgk/sysgk_input.jsp</result> </action> </package> 
-						<package name="dtxx" namespace="/control/dtxx" extends="abstract"> <action 
-						name="dtxx" class="dtxxAction"> <result name="success">/control/dtxx/dtxx_list.jsp</result> 
-						<result name="input">/control/dtxx/dtxx_input.jsp</result> </action> </package> 
-						<package name="kxyj" namespace="/control/kxyj" extends="abstract"> <action 
-						name="kyxm" class="kyxmAction"> <result name="success">/control/kxyj/kyxm_list.jsp</result> 
-						<result name="input">/control/kxyj/kyxm_input.jsp</result> </action> <action 
-						name="yjfx" class="yjfxAction"> <result name="success">/control/kxyj/yjfx_list.jsp</result> 
-						<result name="input">/control/kxyj/yjfx_input.jsp</result> </action> </package> 
-						<package name="kydw" namespace="/control/kydw" extends="abstract"> <action 
-						name="kydw" class="kydwAction"> <result name="success">/control/kydw/kydw_list.jsp</result> 
-						<result name="input">/control/kydw/kydw_input.jsp</result> <result name="kydw_select">/control/kydw/selectKydw_list.jsp</result> 
-						</action> </package> <package name="yjcg" namespace="/control/yjcg" extends="abstract"> 
-						<action name="hjcg" class="hjcgAction"> <result name="success">/control/yjcg/hjcg_list.jsp</result> 
-						<result name="input">/control/yjcg/hjcg_input.jsp</result> </action> <action 
-						name="dblw" class="dblwAction"> <result name="success">/control/yjcg/dblw_list.jsp</result> 
-						<result name="download" type="stream"> <param name="contentType">application/msword</param> 
-						<param name="inputName">inputStream</param> <param name="contentDisposition">attachment;filename="${downloadFileName}"</param> 
-						<param name="bufferSize">4096</param> </result> </action> <action name="zlcg" 
-						class="zlcgAction"> <result name="success">/control/yjcg/zlcg_list.jsp</result> 
-						<result name="input">/control/yjcg/zlcg_input.jsp</result> </action> <action 
-						name="jdcg" class="jdcgAction"> <result name="success">/control/yjcg/jdcg_list.jsp</result> 
-						<result name="input">/control/yjcg/jdcg_input.jsp</result> </action> <action 
-						name="zzjc" class="zzjcAction"> <result name="success">/control/yjcg/zzjc_list.jsp</result> 
-						<result name="input">/control/yjcg/zzjc_input.jsp</result> </action> <action 
-						name="xtpt" class="xtptAction"> <result name="success">/control/yjcg/xtpt_list.jsp</result> 
-						<result name="input">/control/yjcg/xtpt_input.jsp</result> </action> </package> 
-						<package name="front_xsjl" namespace="/front/xsjl" extends="abstract"> <action 
-						name="xsjl" class="xsjlAction"> <result name="success">/front/xsjl/xsjl_list.jsp</result> 
-						<result name="input">/front/xsjl/xsjl_detial.jsp</result> </action> </package> 
-						<package name="front_front" namespace="/front/front" extends="abstract"> 
-						<action name="front" class="frontAction"> <result name="success">/front/index.jsp</result> 
-						</action> </package> <package name="front_yjcg" namespace="/front/yjcg" extends="abstract"> 
-						<action name="hjcg" class="hjcgAction"> <result name="success">/front/yjcg/hjcg_list.jsp</result> 
-						<result name="input">/front/yjcg/hjcg_input.jsp</result> </action> <action 
-						name="zlcg" class="zlcgAction"> <result name="success">/front/yjcg/zlcg_list.jsp</result> 
-						<result name="input">/front/yjcg/zlcg_input.jsp</result> </action> <action 
-						name="jdcg" class="jdcgAction"> <result name="success">/front/yjcg/jdcg_list.jsp</result> 
-						<result name="input">/front/yjcg/jdcg_input.jsp</result> </action> <action 
-						name="dblw" class="dblwAction"> <result name="success">/front/yjcg/dblw_list.jsp</result> 
-						<result name="download" type="stream"> <param name="contentType">application/msword</param> 
-						<param name="inputName">inputStream</param> <param name="contentDisposition">attachment;filename="${downloadFileName}"</param> 
-						<param name="bufferSize">4096</param> </result> </action> <action name="zzjc" 
-						class="zzjcAction"> <result name="success">/front/yjcg/zzjc_list.jsp</result> 
-						<result name="input">/front/yjcg/zzjc_input.jsp</result> </action> <action 
-						name="xtpt" class="xtptAction"> <result name="success">/front/yjcg/xtpt_list.jsp</result> 
-						<result name="input">/front/yjcg/xtpt_input.jsp</result> </action> </package> 
-						<package name="front_sysgk" namespace="/front/sysgk" extends="abstract"> 
-						<action name="sysgk" class="sysgkAction"> <result name="success">/front/sysgk.jsp</result> 
-						</action> </package> <package name="front_dtxx" namespace="/front/dtxx" extends="abstract"> 
-						<action name="dtxx" class="dtxxAction"> <result name="success">/front/dtxx/dtxx_list.jsp</result> 
-						<result name="input">/front/dtxx/dtxx_detial.jsp</result> <result name="front_cgzh">/front/yjcg/cgzh.jsp</result> 
-						</action> </package> <package name="front_kxyj" namespace="/front/kxyj" extends="abstract"> 
-						<action name="kyxm" class="kyxmAction"> <result name="success">/front/kxyj/kyxm_list.jsp</result> 
-						</action> <action name="yjfx" class="yjfxAction"> <result name="success">/front/kxyj/yjfx_list.jsp</result> 
-						</action> </package> <package name="front_kydw" namespace="/front/kydw" extends="abstract"> 
-						<action name="kydw" class="kydwAction"> <result name="success">/front/kydw/kydw_list.jsp</result> 
-						</action> </package> -->
+    <package name="abstract" extends="struts-default">
+        <interceptors>
+            <interceptor name="pagerInter"
+                         class="com.sys.interceptor.PagerInterceptor">
+            </interceptor>
+            <interceptor-stack name="baseInter">
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+                <interceptor-ref name="pagerInter"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="baseInter"></default-interceptor-ref>
+        <global-results>
+            <result name="add_success">/control/common/add_success.jsp</result>
+            <result name="del_success">/control/common/del_success.jsp</result>
+            <result name="update_success">/control/common/update_success.jsp</result>
+            <result name="runtimeException">/control/common/error.jsp</result>
+            <result name="login">/control/login.jsp</result>
+            <result name="input">/control/common/input.jsp</result>
+        </global-results>
+        <global-exception-mappings>
+            <exception-mapping result="runtimeException"
+                               exception="java.lang.RuntimeException"></exception-mapping>
+        </global-exception-mappings>
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">product</param>
+                <param name="namespace">/frontSite</param>
+            </result>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <interceptor-ref name="pagerInter"></interceptor-ref>
+        </action>
+    </package>
+    <package name="privilege" namespace="/control/privilege"
+             extends="abstract">
+        <action name="department" class="departmentAction">
+            <result>/control/privilege/department_list.jsp</result>
+            <result name="select">/control/privilege/selectDepartment_list.jsp
+            </result>
+        </action>
+        <action name="employee" class="employeeAction">
+            <result name="login_success" type="redirect">/control/index.jsp
+            </result>
+            <result name="login_fail">/control/login.jsp</result>
+            <result name="input">/control/privilege/employee_input.jsp
+            </result>
+            <result name="success">/control/privilege/employee_list.jsp
+            </result>
+        </action>
+    </package>
+    <package name="student" namespace="/control/student"
+             extends="abstract">
+        <action name="room" class="roomAction">
+            <result>/control/student/room_list.jsp</result>
+            <result name="select">/control/student/selectRoom_list.jsp</result>
+            <result name="saveMoneyInput">/control/student/saveMoney_input.jsp</result>
+        </action>
+        <action name="card" class="cardAction">
+            <result>/control/student/selectCard_list.jsp</result>
+        </action>
+        <action name="student" class="studentAction">
+            <result>/control/student/student_list.jsp</result>
+            <result name="input">/control/student/student_input.jsp</result>
+            <result name="createCardInput">/control/student/student_card_input.jsp</result>
+            <result name="saveCardMoneyInput">/control/student/student_card_money_input.jsp</result>
+        </action>
+
+    </package>
+    <package name="cost" namespace="/control/cost"
+             extends="abstract">
+        <action name="costItem" class="costItemAction">
+            <result>/control/cost/costItem_list.jsp</result>
+            <result name="input">/control/cost/costItem_input.jsp</result>
+        </action>
+        <action name="waterLog" class="waterLogAction">
+            <result>/control/cost/waterLog_list.jsp</result>
+            <result name="input">/control/cost/waterLog_input.jsp</result>
+        </action>
+
+    </package>
 
 </struts>    

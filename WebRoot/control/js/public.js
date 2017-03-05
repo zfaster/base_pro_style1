@@ -27,7 +27,11 @@ function openDeleteDialog(url,confirmString){
 		c = "你确认要删除记录吗？";
 	}
 	if(confirm(c)){
-		return window.showModalDialog(url,"window123","dialogHeight:234px;dialogWidth:271px;resizable:no;help:yes;status:no;scroll:no");
+		$.post(url,function(data){
+			alert('删除成功');
+			window.location.reload(true);
+		})
+		//return window.open(url,"window123","dialogHeight:234px;dialogWidth:271px;resizable:no;help:yes;status:no;scroll:no");
 	}
 	return false;
 }

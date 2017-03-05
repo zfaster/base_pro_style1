@@ -28,43 +28,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="menu_top"></div>
 		<div class="menu" id="TabPage3">
 			<ul id="TabPage2">
-				<li id="left_tab1" class="Selected" onClick="javascript:border_left('TabPage2','left_tab1');" title="常用">常用</li>
-				<li id="left_tab2" onClick="javascript:border_left('TabPage2','left_tab2');" title="日志">日志</li>		
-				<li id="left_tab3" onClick="javascript:border_left('TabPage2','left_tab3');" title="相册">相册</li>
+				<li id="left_tab1" class="Selected" onClick="javascript:border_left('TabPage2','left_tab1');" title="系统">系统</li>
+				<li id="left_tab2" onClick="javascript:border_left('TabPage2','left_tab2');" title="学生">学生</li>
+				<li id="left_tab3" onClick="javascript:border_left('TabPage2','left_tab3');" title="相册">消费</li>
 				<li id="left_tab7" onClick="javascript:border_left('TabPage2','left_tab7');" title="订阅">订阅</li>
 				<li id="left_tab4" onClick="javascript:border_left('TabPage2','left_tab4');" title="文件">文件</li>
 				<li id="left_tab5" onClick="javascript:border_left('TabPage2','left_tab5');" title="模板">模板</li>
 			</ul>
 			<div id="left_menu_cnt">
 				<ul id="dleft_tab1">
-					<li id="now11"><a href="control/privilege/employee"  target="content1" title="日志管理">员工管理</a></li>
-					<li id="now12"><a href="control/privilege/department" target="content1" title="浏览相册">部门管理</a></li>
-					<li id="now13"><a href="http://www.mianfeimoban.com/admin-templates/"  target="content1" title="日志评论">日志评论</a></li>
-					<li id="now14"><a href="http://www.mianfeimoban.com/admin-templates/" target="content1" title="访客留言">访客留言</a></li>
-					<li id="now1a"><a href="http://www.mianfeimoban.com/admin-templates/" target="content1" title="添加订阅">添加订阅</a></li>
-					<li id="now1b"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('邀请码',this)" target="content1" title="可用邀请码">可用邀请码</a></li>
-					<li id="now1c"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('我的好友',this)" target="content1" title="我的好友">我的好友</a></li>
-					<li id="now1d"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('更新数据',this)" target="content1" title="更新数据">更新数据</a></li>
-					<li id="now1e"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('博客设置',this)" target="content1" title="博客设置">博客设置</a></li>
-					
-					<li id="now19"><a href="http://www.mianfeimoban.com/admin-templates/"  target="_blank" title="进入内容管理操作界面"><font color=red>内容管理员</font></a></li>							
-											
+					<li id="now11"><a href="control/privilege/employee"  target="content1" title="员工管理">员工管理</a></li>
 				</ul>
 				<ul id="dleft_tab2" style="display:none;">
-					<li id="now23"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('日志管理',this)" target="content1" title="日志管理">日志管理</a></li>
-					<li id="now22"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('草稿箱',this)" target="content1" title="草稿箱">草稿箱<span id="sdraft_num"></span></a></li>
-					<li id="now28"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('回收站',this)" target="content1" title="回收站">回收站<span id="del_num"></span></a></li>
-					<li id="now24"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('日志分类',this)" target="content1" title="日志分类">日志分类</a></li>
-					<li id="now25"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('备份日志',this)" target="content1" title="备份日志">备份日志</a></li>
-					<li id="now26"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('评论管理',this)" target="content1" title="评论管理">评论管理</a></li>
-					<li id="now27"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('留言管理',this)" target="content1" title="留言管理">留言管理</a></li>
-					<li id="now29"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('引用通告',this)" target="content1" title="引用通告">引用通告</a></li>
+					<li id="now23"><a href="control/student/room" onClick="go_cmdurl('宿舍管理',this)" target="content1" title="宿舍管理">宿舍管理</a></li>
+					<li id="now22"><a href="control/student/student" onClick="go_cmdurl('学生管理',this)" target="content1" title="宿舍管理">学生管理</a></li>
 				</ul>
 				<ul id="dleft_tab3" style="display:none;">
-					<li id="now31"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('我的相册',this)" target="content1" title="浏览相册">浏览相册</a></li>
-					<li id="now32"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('相片管理',this)" target="content1" title="相片管理">相片管理</a></li>
-					<li id="now33"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('相册分类',this)" target="content1" title="相册分类">相册分类</a></li>
-					<li id="now34"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('大头贴',this)" target="content1" title="大头贴">大头贴</a></li>
+					<li id="now51"><a href="control/cost/costItem?costType=SHOP" onClick="go_cmdurl('超市消费',this)" target="content1" title="超市消费">超市消费</a></li>
+					<li id="now51"><a href="control/cost/costItem?costType=EAT" onClick="go_cmdurl('食堂消费',this)" target="content1" title="食堂消费">食堂消费</a></li>
+					<li id="now22"><a href="control/cost/waterLog" onClick="go_cmdurl('用水消费',this)" target="content1" title="用水消息">用水消费</a></li>
+					<li id="now22"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('用电消费',this)" target="content1" title="用电消费">用电消费</a></li>
+					<li id="now24"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('图书借阅',this)" target="content1" title="图书借阅">图书借阅</a></li>
 				</ul>
 				<ul id="dleft_tab4" style="display:none;">
 					<li id="now41"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('所有文件',this)" target="content1" title="所有文件">所有文件</a></li>
