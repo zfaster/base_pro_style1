@@ -23,6 +23,7 @@ public class CostItemAction extends BaseAction<CostItem> {
     private String actionPath = "control/cost/costItem";
     private String cardNo;
     private boolean read;
+    private Integer cardId;
     private CostType costType;
     @Autowired
     private CardService cardService;
@@ -35,6 +36,10 @@ public class CostItemAction extends BaseAction<CostItem> {
         if(StringUtils.hasText(cardNo)){
             whereSql.append("and o.card.no like ? ");
             params.add("%"+ cardNo +"%");
+        }
+        if(cardId!=null){
+            whereSql.append("and o.card.id = ? ");
+            params.add(cardId);
         }
         if(costType!=null){
             whereSql.append("and o.costType = ? ");
@@ -83,6 +88,14 @@ public class CostItemAction extends BaseAction<CostItem> {
 
     public CostType getCostType() {
         return costType;
+    }
+
+    public Integer getCardId() {
+        return cardId;
+    }
+
+    public void setCardId(Integer cardId) {
+        this.cardId = cardId;
     }
 
     public void setCostType(CostType costType) {
