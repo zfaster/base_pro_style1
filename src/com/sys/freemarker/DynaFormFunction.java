@@ -20,7 +20,6 @@ import freemarker.template.Template;
 
 /**
  * 动态创建添加页面
- * @author ZZY
  *
  */
 public class DynaFormFunction {
