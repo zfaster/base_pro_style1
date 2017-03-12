@@ -1,7 +1,6 @@
 package com.sys.system;
 /**
  * 用于存放表单显示数据
- * @author ZZY
  *
  */
 public class FormModel {
