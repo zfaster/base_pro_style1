@@ -102,16 +102,16 @@ function changState(button){
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">性别</span></div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">联系电话</span></div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">照片</span></div></td>
-        <td width="15%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">所在部门</span></div></td>
+        <td width="15%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">类型</span></div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">基本操作</span></div></td>
       </tr>
       <s:if test="pm.datas != null">
-      <s:iterator value="pm.datas" var="employee">
+      <s:iterator value="pm.datas" var="employee" status="stat">
       <tr>
         <td height="5%" bgcolor="#FFFFFF"><div align="center">
           <input type="checkbox" name="id" value="<s:property value="#employee.id"/>"/>
         </div></td>
-        <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#employee.id"/></div></td>
+        <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#stat.index+1"/></div></td>
         <td height="15%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#employee.username"/></div></td>
         <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#employee.realname"/></div></td>
         <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
@@ -132,10 +132,12 @@ function changState(button){
         			</s:else>
         			
         			</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#employee.department.name"/></div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#employee.type.name"/></div></td>
         <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
-        <a href="javascript:del('${actionPath}!delete?ids=<s:property value="#employee.id"/>')" title="">删除</a> |
-        <a href="javascript:openWin('${actionPath}!updateInput?id=<s:property value="#employee.id"/>','更新员工',600,200,1)" title="">编辑</a>
+            <s:if test="#employee.type.name()!='SUPER_ADMIN'">
+                <a href="javascript:del('${actionPath}!delete?ids=<s:property value="#employee.id"/>')" title="">删除</a> |
+            </s:if>
+       <a href="javascript:openWin('${actionPath}!updateInput?id=<s:property value="#employee.id"/>','更新员工',600,200,1)" title="">编辑</a>
         </div>
         </td>
       </tr>

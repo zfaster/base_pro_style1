@@ -2,6 +2,7 @@ package com.sys.service.employee.impl;
 
 import javax.annotation.PostConstruct;
 
+import com.sys.enums.AdminType;
 import org.springframework.stereotype.Service;
 
 import com.sys.bean.privilege.Employee;
@@ -36,7 +37,9 @@ public class EmployeeServiceImpl extends DaoSupport<Employee> implements
 			Employee employee = new Employee();
 			employee.setUsername("admin");
 			employee.setPassword("admin");
-			employee.setRealname("系统管理员");
+			employee.setRealname("超级管理员");
+			employee.setSex(1);
+			employee.setType(AdminType.SUPER_ADMIN);
 			this.save(employee);
 		}	
 	}

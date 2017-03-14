@@ -1,12 +1,8 @@
 package com.sys.bean.privilege;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
+import com.sys.enums.AdminType;
 import com.sys.system.Condition;
 import com.sys.system.FieldType;
 import com.sys.system.Renewable;
@@ -14,7 +10,8 @@ import com.sys.system.Renewable;
 /**
  * 员工
  */
-@Entity(name="T_Employee")
+@Entity
+@Table(name = "t_employee")
 public class Employee {
 	@Id @GeneratedValue
 	private Integer id;
@@ -49,10 +46,10 @@ public class Employee {
 	@Column
 	@Renewable(false)
 	private int sex;
-	@ManyToOne
-	@JoinColumn(name="department_id")
-	private Department department;
-	
+	@Column
+	@Enumerated
+	private AdminType type;
+
 	/**
 	 * 获得图片保存路径
 	 * @return
@@ -127,12 +124,15 @@ public class Employee {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public Department getDepartment() {
-		return department;
+
+	public AdminType getType() {
+		return type;
 	}
-	public void setDepartment(Department department) {
-		this.department = department;
+
+	public void setType(AdminType type) {
+		this.type = type;
 	}
+
 	public String getImage() {
 		return image;
 	}

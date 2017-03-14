@@ -104,6 +104,7 @@
 					<TR>
 						<td>
 								<input type="hidden"  id="object.id" name="id" value="${object.id}">
+							<input type="hidden"  id="object.type" name="object.type" value="CLASS_ADMIN">
 							<!-- 主输入域开始 -->
 
 							<table class="tableEdit" style="width:600px;" cellspacing="0"
@@ -137,14 +138,6 @@
 									value='%{@com.sys.freemarker.DynaFormFunction@form(#targetObject)}'
 									escapeHtml="" />
 								
-								<tr>
-									<td class="tdEditLabel">所属部门</td>
-									<td class="tdEditContent">
-									<input type="text" id="departmentName" readonly="readonly" disabled="disabled" value="${object.department.name }">
-									<input type="hidden" name="departmentId" id="departmentId" value="${object.department.id }"> 
-									<input type="button" class="buttom"value="选择" onclick="openWin('control/privilege/department?select=true','部门选择',800,600)"/>
-									</td>
-								</tr>
 							</table> <!-- 主输入域结束 --></td>
 					</TR>
 				</TBODY>
