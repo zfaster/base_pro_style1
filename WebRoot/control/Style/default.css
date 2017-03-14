@@ -75,90 +75,90 @@ a:active {text-decoration:none;color:#999;}
 #contents .left div.menu #left_menu_cnt ul li a {display:block;padding:3px 1px 2px 32px;width:120px;border:1px #fff solid;}
 #contents .left div.menu #left_menu_cnt ul li a:hover {color:#115888;border:1px #1879BD solid;}
 
-#contents .left div.menu #left_menu_cnt ul li a.Selected {padding:3px 1px 2px 42px;width:110px;background:#fff url("/js/Style/arrow.gif") no-repeat 18px center;font-weight:600;color:#115888;}
-#contents .left div.menu #left_menu_cnt ul li a.Selected:hover {padding:3px 1px 2px 42px;width:110px;background:#ADD7F7 url("/js/Style/arrow.gif") no-repeat 18px center;font-weight:400;color:#115888;}
+#contents .left div.menu #left_menu_cnt ul li a.Selected {padding:3px 1px 2px 42px;width:110px;background:#fff url("arrow.gif") no-repeat 18px center;font-weight:600;color:#115888;}
+#contents .left div.menu #left_menu_cnt ul li a.Selected:hover {padding:3px 1px 2px 42px;width:110px;background:#ADD7F7 url("arrow.gif") no-repeat 18px center;font-weight:400;color:#115888;}
 
 /* 菜单小图标 */
-#now11 a {background:#fff url("/js/Style/11.gif") no-repeat 8px center;}
-#now11 a:hover {background:#ADD7F7 url("/js/Style/11.gif") no-repeat 8px center;}
-#now12 a {background:#fff url("/js/Style/12.gif") no-repeat 8px center;}
-#now12 a:hover {background:#ADD7F7 url("/js/Style/12.gif") no-repeat 8px center;}
-#now13 a {background:#fff url("/js/Style/13.gif") no-repeat 8px center;}
-#now13 a:hover {background:#ADD7F7 url("/js/Style/13.gif") no-repeat 8px center;}
-#now14 a {background:#fff url("/js/Style/14.gif") no-repeat 8px center;}
-#now14 a:hover {background:#ADD7F7 url("/js/Style/14.gif") no-repeat 8px center;}
-#now15 a {background:#fff url("/js/Style/15.gif") no-repeat 8px center;}
-#now15 a:hover {background:#ADD7F7 url("/js/Style/15.gif") no-repeat 8px center;}
-#now16 a {background:#fff url("/js/Style/16.gif") no-repeat 8px center;}
-#now16 a:hover {background:#ADD7F7 url("/js/Style/16.gif") no-repeat 8px center;}
-#now17 a {background:#fff url("/js/Style/17.gif") no-repeat 8px center;}
-#now17 a:hover {background:#ADD7F7 url("/js/Style/17.gif") no-repeat 8px center;}
-#now18 a {background:#fff url("/js/Style/18.gif") no-repeat 8px center;}
-#now18 a:hover {background:#ADD7F7 url("/js/Style/18.gif") no-repeat 8px center;}
-#now19 a {background:#fff url("/js/Style/19.gif") no-repeat 8px center;}
-#now19 a:hover {background:#ADD7F7 url("/js/Style/19.gif") no-repeat 8px center;}
-#now1a a {background:#fff url("/js/Style/1a.gif") no-repeat 8px center;}
-#now1a a:hover {background:#ADD7F7 url("/js/Style/1a.gif") no-repeat 8px center;}
-#now1b a {background:#fff url("/js/Style/1b.gif") no-repeat 8px center;}
-#now1b a:hover {background:#ADD7F7 url("/js/Style/1b.gif") no-repeat 8px center;}
-#now1c a {background:#fff url("/js/Style/1c.gif") no-repeat 8px center;}
-#now1c a:hover {background:#ADD7F7 url("/js/Style/1c.gif") no-repeat 8px center;}
-#now1d a {background:#fff url("/js/Style/1d.gif") no-repeat 8px center;}
-#now1d a:hover {background:#ADD7F7 url("/js/Style/1d.gif") no-repeat 8px center;}
-#now1e a {background:#fff url("/js/Style/1e.gif") no-repeat 8px center;}
-#now1e a:hover {background:#ADD7F7 url("/js/Style/1e.gif") no-repeat 8px center;}
-#now1f a {background:#fff url("/js/Style/1f.gif") no-repeat 8px center;}
-#now1f a:hover {background:#ADD7F7 url("/js/Style/1f.gif") no-repeat 8px center;}
+#now11 a {background:#fff url("11.gif") no-repeat 8px center;}
+#now11 a:hover {background:#ADD7F7 url("11.gif") no-repeat 8px center;}
+#now12 a {background:#fff url("12.gif") no-repeat 8px center;}
+#now12 a:hover {background:#ADD7F7 url("12.gif") no-repeat 8px center;}
+#now13 a {background:#fff url("13.gif") no-repeat 8px center;}
+#now13 a:hover {background:#ADD7F7 url("13.gif") no-repeat 8px center;}
+#now14 a {background:#fff url("14.gif") no-repeat 8px center;}
+#now14 a:hover {background:#ADD7F7 url("14.gif") no-repeat 8px center;}
+#now15 a {background:#fff url("15.gif") no-repeat 8px center;}
+#now15 a:hover {background:#ADD7F7 url("15.gif") no-repeat 8px center;}
+#now16 a {background:#fff url("16.gif") no-repeat 8px center;}
+#now16 a:hover {background:#ADD7F7 url("16.gif") no-repeat 8px center;}
+#now17 a {background:#fff url("17.gif") no-repeat 8px center;}
+#now17 a:hover {background:#ADD7F7 url("17.gif") no-repeat 8px center;}
+#now18 a {background:#fff url("18.gif") no-repeat 8px center;}
+#now18 a:hover {background:#ADD7F7 url("18.gif") no-repeat 8px center;}
+#now19 a {background:#fff url("19.gif") no-repeat 8px center;}
+#now19 a:hover {background:#ADD7F7 url("19.gif") no-repeat 8px center;}
+#now1a a {background:#fff url("1a.gif") no-repeat 8px center;}
+#now1a a:hover {background:#ADD7F7 url("1a.gif") no-repeat 8px center;}
+#now1b a {background:#fff url("1b.gif") no-repeat 8px center;}
+#now1b a:hover {background:#ADD7F7 url("1b.gif") no-repeat 8px center;}
+#now1c a {background:#fff url("1c.gif") no-repeat 8px center;}
+#now1c a:hover {background:#ADD7F7 url("1c.gif") no-repeat 8px center;}
+#now1d a {background:#fff url("1d.gif") no-repeat 8px center;}
+#now1d a:hover {background:#ADD7F7 url("1d.gif") no-repeat 8px center;}
+#now1e a {background:#fff url("1e.gif") no-repeat 8px center;}
+#now1e a:hover {background:#ADD7F7 url("1e.gif") no-repeat 8px center;}
+#now1f a {background:#fff url("1f.gif") no-repeat 8px center;}
+#now1f a:hover {background:#ADD7F7 url("1f.gif") no-repeat 8px center;}
 
-#now21 a {background:#fff url("/js/Style/21.gif") no-repeat 8px center;}
-#now21 a:hover {background:#ADD7F7 url("/js/Style/21.gif") no-repeat 8px center;}
-#now22 a {background:#fff url("/js/Style/22.gif") no-repeat 8px center;}
-#now22 a:hover {background:#ADD7F7 url("/js/Style/22.gif") no-repeat 8px center;}
-#now23 a {background:#fff url("/js/Style/23.gif") no-repeat 8px center;}
-#now23 a:hover {background:#ADD7F7 url("/js/Style/23.gif") no-repeat 8px center;}
-#now24 a {background:#fff url("/js/Style/24.gif") no-repeat 8px center;}
-#now24 a:hover {background:#ADD7F7 url("/js/Style/24.gif") no-repeat 8px center;}
-#now25 a {background:#fff url("/js/Style/25.gif") no-repeat 8px center;}
-#now25 a:hover {background:#ADD7F7 url("/js/Style/25.gif") no-repeat 8px center;}
-#now26 a {background:#fff url("/js/Style/26.gif") no-repeat 8px center;}
-#now26 a:hover {background:#ADD7F7 url("/js/Style/26.gif") no-repeat 8px center;}
-#now27 a {background:#fff url("/js/Style/27.gif") no-repeat 8px center;}
-#now27 a:hover {background:#ADD7F7 url("/js/Style/27.gif") no-repeat 8px center;}
-#now28 a {background:#fff url("/js/Style/28.gif") no-repeat 8px center;}
-#now28 a:hover {background:#ADD7F7 url("/js/Style/28.gif") no-repeat 8px center;}
-#now29 a {background:#fff url("/js/Style/29.gif") no-repeat 8px center;}
-#now29 a:hover {background:#ADD7F7 url("/js/Style/29.gif") no-repeat 8px center;}
+#now21 a {background:#fff url("21.gif") no-repeat 8px center;}
+#now21 a:hover {background:#ADD7F7 url("21.gif") no-repeat 8px center;}
+#now22 a {background:#fff url("22.gif") no-repeat 8px center;}
+#now22 a:hover {background:#ADD7F7 url("22.gif") no-repeat 8px center;}
+#now23 a {background:#fff url("23.gif") no-repeat 8px center;}
+#now23 a:hover {background:#ADD7F7 url("23.gif") no-repeat 8px center;}
+#now24 a {background:#fff url("24.gif") no-repeat 8px center;}
+#now24 a:hover {background:#ADD7F7 url("24.gif") no-repeat 8px center;}
+#now25 a {background:#fff url("25.gif") no-repeat 8px center;}
+#now25 a:hover {background:#ADD7F7 url("25.gif") no-repeat 8px center;}
+#now26 a {background:#fff url("26.gif") no-repeat 8px center;}
+#now26 a:hover {background:#ADD7F7 url("26.gif") no-repeat 8px center;}
+#now27 a {background:#fff url("27.gif") no-repeat 8px center;}
+#now27 a:hover {background:#ADD7F7 url("27.gif") no-repeat 8px center;}
+#now28 a {background:#fff url("28.gif") no-repeat 8px center;}
+#now28 a:hover {background:#ADD7F7 url("28.gif") no-repeat 8px center;}
+#now29 a {background:#fff url("29.gif") no-repeat 8px center;}
+#now29 a:hover {background:#ADD7F7 url("29.gif") no-repeat 8px center;}
 
-#now31 a {background:#fff url("/js/Style/31.gif") no-repeat 8px center;}
-#now31 a:hover {background:#ADD7F7 url("/js/Style/31.gif") no-repeat 8px center;}
-#now32 a {background:#fff url("/js/Style/32.gif") no-repeat 8px center;}
-#now32 a:hover {background:#ADD7F7 url("/js/Style/32.gif") no-repeat 8px center;}
-#now33 a {background:#fff url("/js/Style/33.gif") no-repeat 8px center;}
-#now33 a:hover {background:#ADD7F7 url("/js/Style/33.gif") no-repeat 8px center;}
-#now34 a {background:#fff url("/js/Style/34.gif") no-repeat 8px center;}
-#now34 a:hover {background:#ADD7F7 url("/js/Style/34.gif") no-repeat 8px center;}
+#now31 a {background:#fff url("31.gif") no-repeat 8px center;}
+#now31 a:hover {background:#ADD7F7 url("31.gif") no-repeat 8px center;}
+#now32 a {background:#fff url("32.gif") no-repeat 8px center;}
+#now32 a:hover {background:#ADD7F7 url("32.gif") no-repeat 8px center;}
+#now33 a {background:#fff url("33.gif") no-repeat 8px center;}
+#now33 a:hover {background:#ADD7F7 url("33.gif") no-repeat 8px center;}
+#now34 a {background:#fff url("34.gif") no-repeat 8px center;}
+#now34 a:hover {background:#ADD7F7 url("34.gif") no-repeat 8px center;}
 
-#now41 a {background:#fff url("/js/Style/41.gif") no-repeat 8px center;}
-#now41 a:hover {background:#ADD7F7 url("/js/Style/41.gif") no-repeat 8px center;}
-#now42 a {background:#fff url("/js/Style/42.gif") no-repeat 8px center;}
-#now42 a:hover {background:#ADD7F7 url("/js/Style/42.gif") no-repeat 8px center;}
-#now43 a {background:#fff url("/js/Style/43.gif") no-repeat 8px center;}
-#now43 a:hover {background:#ADD7F7 url("/js/Style/43.gif") no-repeat 8px center;}
-#now44 a {background:#fff url("/js/Style/44.gif") no-repeat 8px center;}
-#now44 a:hover {background:#ADD7F7 url("/js/Style/44.gif") no-repeat 8px center;}
+#now41 a {background:#fff url("41.gif") no-repeat 8px center;}
+#now41 a:hover {background:#ADD7F7 url("41.gif") no-repeat 8px center;}
+#now42 a {background:#fff url("42.gif") no-repeat 8px center;}
+#now42 a:hover {background:#ADD7F7 url("42.gif") no-repeat 8px center;}
+#now43 a {background:#fff url("43.gif") no-repeat 8px center;}
+#now43 a:hover {background:#ADD7F7 url("43.gif") no-repeat 8px center;}
+#now44 a {background:#fff url("44.gif") no-repeat 8px center;}
+#now44 a:hover {background:#ADD7F7 url("44.gif") no-repeat 8px center;}
 
-#now51 a {background:#fff url("/js/Style/51.gif") no-repeat 8px center;}
-#now51 a:hover {background:#ADD7F7 url("/js/Style/51.gif") no-repeat 8px center;}
-#now52 a {background:#fff url("/js/Style/52.gif") no-repeat 8px center;}
-#now52 a:hover {background:#ADD7F7 url("/js/Style/52.gif") no-repeat 8px center;}
-#now53 a {background:#fff url("/js/Style/53.gif") no-repeat 8px center;}
-#now53 a:hover {background:#ADD7F7 url("/js/Style/53.gif") no-repeat 8px center;}
-#now54 a {background:#fff url("/js/Style/54.gif") no-repeat 8px center;}
-#now54 a:hover {background:#ADD7F7 url("/js/Style/54.gif") no-repeat 8px center;}
+#now51 a {background:#fff url("51.gif") no-repeat 8px center;}
+#now51 a:hover {background:#ADD7F7 url("51.gif") no-repeat 8px center;}
+#now52 a {background:#fff url("52.gif") no-repeat 8px center;}
+#now52 a:hover {background:#ADD7F7 url("52.gif") no-repeat 8px center;}
+#now53 a {background:#fff url("53.gif") no-repeat 8px center;}
+#now53 a:hover {background:#ADD7F7 url("53.gif") no-repeat 8px center;}
+#now54 a {background:#fff url("54.gif") no-repeat 8px center;}
+#now54 a:hover {background:#ADD7F7 url("54.gif") no-repeat 8px center;}
 
-.open {background: url("/js/Style/open.gif") no-repeat 0px 4px;}
-.close {background: url("/js/Style/close.gif") no-repeat 0px 4px;}
-#now701 {background: url("/js/Style/701.gif") no-repeat 0px 2px;}
+.open {background: url("open.gif") no-repeat 0px 4px;}
+.close {background: url("close.gif") no-repeat 0px 4px;}
+#now701 {background: url("701.gif") no-repeat 0px 2px;}
 
 /* 左侧菜单订阅部分 */
 #dleft_tab7 {height:490px!important;height:100%;width:155px;margin:0 9px 0 0;overflow-x:hidden;overflow-y:auto;}
@@ -172,17 +172,17 @@ a:active {text-decoration:none;color:#999;}
 #dleft_tab7 li.open {border-top:1px #efefef solid;}
 #dleft_tab7 li.close {border-top:1px #efefef solid;}
 #dleft_tab7 li#now701 {}
-#dleft_tab7 li#now701 a {padding:2px 0px 0px 23px!important;background:#fff url("/js/Style/701.gif") no-repeat 5px 2px!important;}
+#dleft_tab7 li#now701 a {padding:2px 0px 0px 23px!important;background:#fff url("701.gif") no-repeat 5px 2px!important;}
 #dleft_tab7 li#now701 a:hover {}
-#dleft_tab7 li#now701 a.Selected {padding:2px 0px 0px 23px!important;background:#fff url("/js/Style/701.gif") no-repeat 5px 2px!important;color:#f60!important;font-weight:400!important;}
+#dleft_tab7 li#now701 a.Selected {padding:2px 0px 0px 23px!important;background:#fff url("701.gif") no-repeat 5px 2px!important;color:#f60!important;font-weight:400!important;}
 #dleft_tab7 li#now701 a.Selected:hover {color:#115888!important;}
 
 /* 左侧菜订阅部分 操作按扭 */
 #dleft_tab7 ol.option {padding:0!important;margin:0!important;width:140px;height:25px;overflow:hidden;}
 #dleft_tab7 ol.option li {float:left;margin:3px 0 0 3px!important;width:40px;height:20px;overflow:hidden;}
-#dleft_tab7 ol.option li a {padding:1px 0 0 10px!important;margin:0!important;letter-spacing:1px;width:40px;height:17px;background:#fff url("/js/Style/option.gif") no-repeat left top;border:0!important;font-weight:400;color:#000;line-height:1.5!important;}
+#dleft_tab7 ol.option li a {padding:1px 0 0 10px!important;margin:0!important;letter-spacing:1px;width:40px;height:17px;background:#fff url("option.gif") no-repeat left top;border:0!important;font-weight:400;color:#000;line-height:1.5!important;}
 #dleft_tab7 ol.option li a:hover {border:0!important;}
-#dleft_tab7 ol.option li a.Selected {padding:1px 0 0 10px!important;margin:0!important;width:40px;background:#fff url("/js/Style/option.gif") no-repeat left top!important;border:0!important;font-weight:600!important;color:#115888!important;}
+#dleft_tab7 ol.option li a.Selected {padding:1px 0 0 10px!important;margin:0!important;width:40px;background:#fff url("option.gif") no-repeat left top!important;border:0!important;font-weight:600!important;color:#115888!important;}
 #dleft_tab7 ol.option li a.Selected:hover {font-weight:600!important;color:#000!important;}
 /* 内容右层 */
 #contents .right {float:none;height:100%;margin:0 0 0 205px;text-align:left;}
