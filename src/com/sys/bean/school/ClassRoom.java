@@ -1,6 +1,7 @@
 package com.sys.bean.school;
 
 import com.sys.bean.privilege.Employee;
+import com.sys.system.Renewable;
 
 import javax.persistence.*;
 
@@ -14,9 +15,11 @@ public class ClassRoom {
     @GeneratedValue
     private Integer id;
     @Column
+    @Renewable
     private String name;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "employee_id")
+    @Renewable
     private Employee employee;
 
     public Integer getId() {
@@ -42,4 +45,5 @@ public class ClassRoom {
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
+
 }

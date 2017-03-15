@@ -2,6 +2,7 @@ package com.sys.bean.privilege;
 
 import javax.persistence.*;
 
+import com.sys.bean.school.ClassRoom;
 import com.sys.enums.AdminType;
 import com.sys.system.Condition;
 import com.sys.system.FieldType;
@@ -49,6 +50,8 @@ public class Employee {
 	@Column
 	@Enumerated
 	private AdminType type;
+	@OneToOne(mappedBy = "employee")
+	private ClassRoom classRoom;
 
 	/**
 	 * 获得图片保存路径
@@ -144,5 +147,13 @@ public class Employee {
 	}
 	public void setSex(int sex) {
 		this.sex = sex;
+	}
+
+	public ClassRoom getClassRoom() {
+		return classRoom;
+	}
+
+	public void setClassRoom(ClassRoom classRoom) {
+		this.classRoom = classRoom;
 	}
 }

@@ -1,78 +1,48 @@
-package com.sys.action.privilege;
+package com.sys.action.school;
 
+import com.sys.bean.school.Student;
+import com.sys.service.base.DAO;
+import com.sys.web.action.BaseAction;
+import org.apache.commons.io.FileUtils;
+import org.apache.struts2.ServletActionContext;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+
+import javax.annotation.Resource;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.UUID;
 
-import javax.annotation.Resource;
-
-import com.sys.enums.AdminType;
-import org.apache.commons.io.FileUtils;
-import org.apache.struts2.ServletActionContext;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
-
-import com.sys.bean.privilege.Employee;
-import com.sys.service.base.DAO;
-import com.sys.service.employee.EmployeeService;
-import com.sys.web.action.BaseAction;
 @Controller
 @Scope("prototype")
-public class EmployeeAction extends BaseAction<Employee> {
+public class StudentAction extends BaseAction<Student> {
 
-	private String realname;
-	private String actionPath = "control/privilege/employee";
+	private String actionPath = "control/school/student";
 	private String username;
 	private File image;
 	private String imageFileName;
 	private String imageContentType;
-	private boolean state;
-	private String password;
-	private int employeeId;
-	private int[] groupId;
-	private String error;
-	private boolean select;
+	private String realname;
+
 	@Override
 	public String execute() throws Exception {
 		LinkedHashMap<String, String> orderBy = new LinkedHashMap<String, String>();
-		orderBy.put("realname", "asc");
-		orderBy.put("id", "asc");
+		orderBy.put("id", "desc");
 		StringBuffer whereSql = new StringBuffer(" 1 = 1 ");
 		List<Object> params = new ArrayList<Object>();
 		if(realname != null && !"".equals(realname)){
 			whereSql.append("and o.realname like ? ");
 			params.add("%"+realname+"%");
 		}
-		if(select){
-			whereSql.append("and o.type = ? ");
-			params.add(AdminType.CLASS_ADMIN);
-			whereSql.append("and not exists (select cr from ClassRoom cr where cr.employee.id = o.id)");
-		}
 		pm = baseService.findScrollData(
 				orderBy,whereSql.toString(),params.toArray());
 		setPageInfo();
-		if(select){
-			return "select";
-		}
 		return SUCCESS;
 	}
-	
-	public String checkUsername() throws Exception {
-		boolean isExists = ((EmployeeService)baseService).checkUsernameExists(username,employeeId);
-		sendMessage(ServletActionContext.getResponse(), isExists+"");
-		return null;
-	}
-	public String modifyPassword() throws Exception {
-		String oldPassword = ServletActionContext.getRequest().getParameter("oldPassword");
-		((EmployeeService)baseService).modifyPassword(employeeId, oldPassword, object.getPassword());
-		return "update_success";
-	}
-	
+
 	public String update() throws Exception {
 		if(id == null){
 			baseService.save(object);
@@ -87,7 +57,7 @@ public class EmployeeAction extends BaseAction<Employee> {
 				baseService.update(object);
 			}
 		}else{
-			Employee oldEmployee = baseService.find(id);
+			Student oldEmployee = baseService.find(id);
 			if(oldEmployee.getImagePath() != null && image!=null){
 				String oldPath = ServletActionContext.getServletContext().getRealPath(oldEmployee.getImagePath());
 				File oldFile = new File(oldPath);
@@ -109,26 +79,8 @@ public class EmployeeAction extends BaseAction<Employee> {
 		}
 		return "update_success";
 	}
-	/**
-	 * 用户退出
-	 * @return
-	 * @throws Exception
-	 */
-	public String quit() throws Exception {
-		ServletActionContext.getRequest().getSession().invalidate();
-		return "login";
-	}
-	public String login() throws Exception {
-		Employee e = ((EmployeeService)baseService).login(username, password);
-		if(e == null){
-			error = "用户名或密码错误";
-			return "login_fail";
-		}else{
-			ServletActionContext.getRequest().getSession().setAttribute("employee",e);
-			return "login_success";
-		}
-	}
-	@Resource(name="employeeService")
+
+	@Resource(name="studentService")
 	public void setBaseService(DAO baseService) {
 		this.baseService = baseService;
 	}
@@ -174,36 +126,6 @@ public class EmployeeAction extends BaseAction<Employee> {
 	public void setImageNameContentType(String imageNameContentType) {
 		this.imageContentType = imageNameContentType;
 	}
-	public boolean isState() {
-		return state;
-	}
-	public void setState(boolean state) {
-		this.state = state;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public int getEmployeeId() {
-		return employeeId;
-	}
-	public void setEmployeeId(int employeeId) {
-		this.employeeId = employeeId;
-	}
-	public int[] getGroupId() {
-		return groupId;
-	}
-	public void setGroupId(int[] groupId) {
-		this.groupId = groupId;
-	}
-	public String getError() {
-		return error;
-	}
-	public void setError(String error) {
-		this.error = error;
-	}
 
 	public File getImage() {
 		return image;
@@ -229,11 +151,5 @@ public class EmployeeAction extends BaseAction<Employee> {
 		this.imageContentType = imageContentType;
 	}
 
-	public boolean isSelect() {
-		return select;
-	}
 
-	public void setSelect(boolean select) {
-		this.select = select;
-	}
 }

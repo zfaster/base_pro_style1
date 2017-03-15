@@ -49,7 +49,19 @@
 									</result>
 									<result name="success">/control/privilege/employee_list.jsp
 									</result>
+									<result name="select">/control/privilege/selectEmployee_list.jsp
+									</result>
 						</action>
+			</package>
+
+			<package name="school" namespace="/control/school"
+					 extends="abstract">
+				<action name="*" class="{1}Action">
+					<result name="input">/control/school/{1}_input.jsp
+					</result>
+					<result name="success">/control/school/{1}_list.jsp
+					</result>
+				</action>
 			</package>
 
 </struts>    

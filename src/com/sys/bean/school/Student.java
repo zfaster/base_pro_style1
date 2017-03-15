@@ -1,6 +1,7 @@
 package com.sys.bean.school;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * 校友
@@ -26,7 +27,28 @@ public class Student {
     @ManyToOne
     @JoinColumn(name = "room_id")
     private ClassRoom room;
-
+    @OneToMany(mappedBy = "student")
+    private List<Message> messageList;
+    /**
+     * 获得图片保存路径
+     * @return
+     */
+    public String getImagePath(){
+        if(this.username != null && this.image != null){
+            return "images/employee/"+this.id+"_"+this.username+"/"+this.image;
+        }
+        return null;
+    }
+    /**
+     * 获得图片默认保存路劲
+     * @return
+     */
+    public String getSavePath(){
+        if(this.username != null){
+            return "images/student/"+this.id+"_"+this.username+"/";
+        }
+        return null;
+    }
     public Integer getId() {
         return id;
     }
@@ -89,5 +111,13 @@ public class Student {
 
     public void setRoom(ClassRoom room) {
         this.room = room;
+    }
+
+    public List<Message> getMessageList() {
+        return messageList;
+    }
+
+    public void setMessageList(List<Message> messageList) {
+        this.messageList = messageList;
     }
 }
