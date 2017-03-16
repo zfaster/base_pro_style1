@@ -9,7 +9,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Your Website Title</title>
+	<title>校友录</title>
 	<meta name="description" content="Website Description" />
 	<meta name="keywords" content="Website Kwywords" />
 	<style type="text/css" media="all">@import "style/style.css";</style>
@@ -42,7 +42,9 @@
 <p><a class="skiplink" href="#maincontent">Skip over navigation</a></p>
 <div id="container">
 	<div id="wrapper">
-		<jsp:include page="common/header.jsp"/>
+		<jsp:include page="common/header.jsp">
+            <jsp:param name="target" value="comment"/>
+        </jsp:include>
 		<div id="content">
 			<div id="maincontent">
 				<div class="boxbig">
@@ -67,6 +69,14 @@
 									</p>
 								</div>
 								<div class="clear"></div>
+								<ul id="listpages">
+									<li class="unclick">&#171; 上一页</li>
+									<li><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#" class="active">3</a></li>
+									<li class="dotted">....</li>
+									<li><a href="#">下一页 &#187;</a></li>
+								</ul>
 							</li>
 						</ul>
 						<h2 class="subtitle">发表留言</h2>
@@ -92,7 +102,7 @@
 							<li><a href="#"><img src="images/ads_4.jpg" alt="VideoHive" /></a></li>
 						</ul>
 						<div class="clear"></div>
-						<a href="#" class="linkadv">Advertise Here</a>
+						<a href="#" class="linkadv">查看更多</a>
 						<div class="clear"></div>
 					</div>
 				</div>

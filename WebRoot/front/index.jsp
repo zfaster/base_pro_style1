@@ -9,7 +9,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Your Website Title</title>
+	<title>校友录</title>
 	<meta name="description" content="Website Description" />
 	<meta name="keywords" content="Website Kwywords" />
 	<style type="text/css" media="all">@import "style/style.css";</style>

@@ -2,7 +2,7 @@
 <div id="footer">
     <p id="texttwitter"></p>
     <ul id="menufooterright">
-        <li>校友录管理系统</li>
+        <li>校友管理系统</li>
         <li class="last"><a href="#">返回顶部</a></li>
     </ul>
 </div>
