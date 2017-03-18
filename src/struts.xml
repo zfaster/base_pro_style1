@@ -30,14 +30,6 @@
 									<exception-mapping result="runtimeException"
 												exception="java.lang.RuntimeException"></exception-mapping>
 						</global-exception-mappings>
-						<action name="index">
-									<result type="redirectAction">
-												<param name="actionName">product</param>
-												<param name="namespace">/frontSite</param>
-									</result>
-									<interceptor-ref name="defaultStack"></interceptor-ref>
-									<interceptor-ref name="pagerInter"></interceptor-ref>
-						</action>
 			</package>
 			<package name="privilege" namespace="/control/privilege"
 						extends="abstract">
@@ -60,6 +52,28 @@
 					<result name="input">/control/school/{1}_input.jsp
 					</result>
 					<result name="success">/control/school/{1}_list.jsp
+					</result>
+				</action>
+			</package>
+
+			<package name="front" namespace="/front"
+					 extends="struts-default">
+				<interceptors>
+					<interceptor name="pagerInter"
+								 class="com.sys.interceptor.PagerInterceptor">
+					</interceptor>
+					<interceptor-stack name="baseInter">
+						<interceptor-ref name="defaultStack"></interceptor-ref>
+						<interceptor-ref name="pagerInter"></interceptor-ref>
+					</interceptor-stack>
+				</interceptors>
+				<default-interceptor-ref name="baseInter"></default-interceptor-ref>
+				<action name="student" class="frontAction">
+					<result name="register">/front/register.jsp
+					</result>
+					<result name="contact">/front/contact.jsp
+					</result>
+					<result name="index">/front/index.jsp
 					</result>
 				</action>
 			</package>

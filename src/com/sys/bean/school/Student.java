@@ -1,6 +1,7 @@
 package com.sys.bean.school;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,6 +25,8 @@ public class Student {
     private String image;
     @Column
     private String address;
+    @Column
+    private Date createTime;
     @ManyToOne
     @JoinColumn(name = "room_id")
     private ClassRoom room;

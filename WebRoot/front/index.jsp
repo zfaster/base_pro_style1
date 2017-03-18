@@ -48,7 +48,12 @@
 		<jsp:include page="common/header.jsp"/>
 		<div id="content">
 			<div id="intro">
-				<h2>欢迎使用校友录管理系统，请先登录或注册</h2>
+				<s:if test="#session.student==null">
+					<h2>欢迎使用校友录管理系统，请先登录或注册</h2>
+				</s:if>
+				<s:else>
+					<h2>欢迎同学，<s:property value="#session.student.realname"/></h2>
+				</s:else>
 			</div>
 			<div class="clear"></div>
 		</div>

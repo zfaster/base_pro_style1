@@ -189,7 +189,6 @@ public class BaseAction<T> extends ActionSupport {
 	
 	/**
 	 * 获得泛型T的实际类型
-	 * @param action
 	 * @return
 	 */
 	@SuppressWarnings("rawtypes")
@@ -228,14 +227,14 @@ public class BaseAction<T> extends ActionSupport {
 	 * @param message
 	 */
 	public static void sendMessage(HttpServletResponse response , String message){
-		 try {
+		try {
 			response.setCharacterEncoding("utf-8");
-			 response.setHeader("param", "no-cache");
-			 response.setHeader("cache-control", "no-cache");
-			 Writer writer = response.getWriter();
-			 writer.write(message);
-			 writer.flush();
-			 writer.close();
+			response.setHeader("param", "no-cache");
+			response.setHeader("cache-control", "no-cache");
+			Writer writer = response.getWriter();
+			writer.write(message);
+			writer.flush();
+			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

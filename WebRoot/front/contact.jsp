@@ -51,7 +51,13 @@
 					<h1 class="titlebig">校友录</h1>
 					<div class="boxbigcontent">
 						<ul id="listgallery">
-							<li><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number One"><img src="images/img_gal.jpg" alt="Photo" /><br />Lorem ipsum dolor</a></li>
+							<s:iterator value="studentPg.datas" var="obj" status="stat">
+								<li
+								><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number One">
+									<img src="images/img_gal.jpg" alt="Photo" /><br />
+									Lorem ipsum dolor</a>
+								</li>
+							</s:iterator>
 							<li><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number Two"><img src="images/img_gal.jpg" alt="Photo" /><br />Donec et quam dolor</a></li>
 							<li><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number Three"><img src="images/img_gal.jpg" alt="Photo" /><br />Class aptent taciti sociosqu ad litora</a></li>
 							<li><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number Four"><img src="images/img_gal.jpg" alt="Photo" /><br />Suspendisse euismod, risus at adipiscing pretium</a></li>
