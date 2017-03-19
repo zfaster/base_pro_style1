@@ -38,7 +38,7 @@ public class Student {
      */
     public String getImagePath(){
         if(this.username != null && this.image != null){
-            return "images/employee/"+this.id+"_"+this.username+"/"+this.image;
+            return "images/student/"+this.id+"_"+this.username+"/"+this.image;
         }
         return null;
     }

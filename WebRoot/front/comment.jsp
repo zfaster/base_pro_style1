@@ -51,62 +51,39 @@
 					<h1 class="titlebig">校友留言</h1>
 					<div class="boxbigcontent">
 						<ul id="listcomment">
-							<li>
-								<img src="images/default_avatar.png" alt="Avatar" class="imgavatar" />
-								<div class="placecomment">
-									<h3><strong>John Doe</strong>, September 29th 2009</h3>
-									<p>Vestibulum sed mauris in nisi suscipit ullamcorper sit amet vel dui. Praesent commodo feugiat lectus, eget hendrerit risus viverra a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat, mi eu posuere facilisis, dolor sapien auctor orci, vel posuere velit nibh ac tortor. Suspendisse velit erat, sodales id iaculis non, dapibus ut lacus. Nulla facilisi. Ut dui sapien, vulputate id tincidunt nec, semper quis arcu.<br /><br />
-										Vestibulum sed mauris in nisi suscipit ullamcorper sit amet vel dui. Praesent commodo feugiat lectus, eget hendrerit risus viverra a.
-									</p>
-								</div>
-								<div class="clear"></div>
-							</li>
-							<li>
-								<img src="images/default_avatar.png" alt="Avatar" class="imgavatar" />
-								<div class="placecomment">
-									<h3><strong>John Doe</strong>, September 29th 2009</h3>
-									<p>Vestibulum sed mauris in nisi suscipit ullamcorper sit amet vel dui. Praesent commodo feugiat lectus, eget hendrerit risus viverra a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat, mi eu posuere facilisis, dolor sapien auctor orci, vel posuere velit nibh ac tortor. Suspendisse velit erat, sodales id iaculis non, dapibus ut lacus. Nulla facilisi. Ut dui sapien, vulputate id tincidunt nec, semper quis arcu.
-									</p>
-								</div>
-								<div class="clear"></div>
-								<ul id="listpages">
-									<li class="unclick">&#171; 上一页</li>
-									<li><a href="#">1</a></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#" class="active">3</a></li>
-									<li class="dotted">....</li>
-									<li><a href="#">下一页 &#187;</a></li>
-								</ul>
-							</li>
+							<s:iterator value="pm.datas" var="obj" status="stat">
+								<li>
+									<s:if test="#obj.getImagePath() == null">
+										<img src="images/nopicture2.jpg" alt="<s:property value="#obj.student.name"/>" class="imgavatar" />
+									</s:if>
+									<s:else>
+										<img src="<s:property value="#obj.student.getImagePath()"/>" alt="<s:property value="#obj.student.name"/>" class="imgavatar" />
+									</s:else>
+									<div class="placecomment">
+										<h3><strong><s:property value="#obj.student.name"/></strong>, <s:date name="#obj.student" format="yyyy-MM-dd HH:mm:ss"/></h3>
+										<p>
+											<s:property value="#obj.content"/>
+										</p>
+									</div>
+									<div class="clear"></div>
+								</li>
+							</s:iterator>
+
 						</ul>
+						<jsp:include page="/front/common/pager.jsp">
+							<jsp:param name="url" value="${ctx}/front/student!commetList"/>
+						</jsp:include>
 						<h2 class="subtitle">发表留言</h2>
-						<form method="post" action="#" id="frmcomment">
+						<form method="post" action="${ctx}/front/student!comment" id="frmcomment">
 							<div>
 								<label for="lblcomment">内容 </label>
-								<textarea name="comment" cols="80" rows="10" id="lblcomment" class="textareacomment"></textarea><br />
+								<textarea name="message.comment" cols="80" rows="10" id="lblcomment" class="textareacomment"></textarea><br />
 								<input type="submit" name="submitcomment" class="submitcomment" value="发表留言" />
 							</div>
 						</form>
 					</div>
 					<div class="boxbigcontentbottom"></div>
 				</div>
-			</div>
-			<div id="nav">
-				<div class="boxnav">
-					<h3 class="titlenav">同班校友</h3>
-					<div class="boxnavcontent">
-						<ul id="listads">
-							<li><a href="#"><img src="images/ads_1.jpg" alt="GraphicRiver" /></a></li>
-							<li><a href="#"><img src="images/ads_2.jpg" alt="ThemeForest" /></a></li>
-							<li><a href="#"><img src="images/ads_3.jpg" alt="AudioJungle" /></a></li>
-							<li><a href="#"><img src="images/ads_4.jpg" alt="VideoHive" /></a></li>
-						</ul>
-						<div class="clear"></div>
-						<a href="#" class="linkadv">查看更多</a>
-						<div class="clear"></div>
-					</div>
-				</div>
-
 			</div>
 			<div class="clear"></div>
 		</div>

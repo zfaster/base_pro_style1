@@ -75,6 +75,8 @@
 					</result>
 					<result name="index">/front/index.jsp
 					</result>
+					<result name="comment">/front/comment.jsp
+					</result>
 				</action>
 			</package>
 

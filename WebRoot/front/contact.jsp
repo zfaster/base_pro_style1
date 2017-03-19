@@ -17,7 +17,7 @@
 	<style type="text/css">@import "style/ie.css";</style>
 	<script src="script/DD_belatedPNG.js" type="text/javascript"></script>
 	<script type="text/javascript">
-		DD_belatedPNG.fix('#logo span, #loginarea, #panellogin, .textboxlogin, img');
+		DD_belatedPNG.fix('#logo span, #loginarea, #panellogin, .textboxlogin, #shadowslideshow, img');
 	</script>
 	<![endif]-->
 	<!--[if IE 7]><style type="text/css">@import "style/ie7.css";</style><![endif]-->
@@ -25,6 +25,9 @@
 	<script src="script/ui_core.js" type="text/javascript"></script>
 	<script src="script/ui_tabs.js" type="text/javascript"></script>
 	<script src="script/lightbox.js" type="text/javascript"></script>
+	<script src="script/easing.js" type="text/javascript"></script>
+	<script src="script/jcarousel.js" type="text/javascript"></script>
+	<script src="script/slideshow.js" type="text/javascript"></script>
 	<script src="script/twitter.js" type="text/javascript"></script>
 	<script src="script/gettwitter.js" type="text/javascript"></script>
 	<script type="text/javascript">
@@ -39,6 +42,7 @@
 	</script>
 </head>
 <body>
+<p><a class="skiplink" href="#maincontent">Skip over navigation</a></p>
 <div id="container">
 	<div id="wrapper">
 		<jsp:include page="common/header.jsp">
@@ -51,33 +55,26 @@
 					<h1 class="titlebig">校友录</h1>
 					<div class="boxbigcontent">
 						<ul id="listgallery">
-							<s:iterator value="studentPg.datas" var="obj" status="stat">
-								<li
-								><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number One">
-									<img src="images/img_gal.jpg" alt="Photo" /><br />
-									Lorem ipsum dolor</a>
+							<s:iterator value="pm.datas" var="obj" status="stat">
+								<li><a>
+									<s:if test="#obj.getImagePath() == null">
+										<img src="images/nopicture2.jpg" alt="<s:property value="#obj.realname"/>" />
+									</s:if>
+									<s:else>
+										<img src="/<s:property value="#obj.getImagePath()" />" width="100" height="100" alt="<s:property value="#obj.realname"/>" />
+									</s:else>
+									<br />
+									<s:property value="#obj.realname"/></a>
+
 								</li>
 							</s:iterator>
-							<li><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number Two"><img src="images/img_gal.jpg" alt="Photo" /><br />Donec et quam dolor</a></li>
-							<li><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number Three"><img src="images/img_gal.jpg" alt="Photo" /><br />Class aptent taciti sociosqu ad litora</a></li>
-							<li><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number Four"><img src="images/img_gal.jpg" alt="Photo" /><br />Suspendisse euismod, risus at adipiscing pretium</a></li>
-							<li><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number Five"><img src="images/img_gal.jpg" alt="Photo" /><br />Donec egestas</a></li>
-							<li><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number Six"><img src="images/img_gal.jpg" alt="Photo" /><br />Suspendisse euismod</a></li>
-							<li><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number Seven"><img src="images/img_gal.jpg" alt="Photo" /><br />Donec egestas</a></li>
-							<li><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number Five"><img src="images/img_gal.jpg" alt="Photo" /><br />Donec egestas</a></li>
-							<li><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number Six"><img src="images/img_gal.jpg" alt="Photo" /><br />Suspendisse euismod</a></li>
-							<li><a href="images/portfolio_1.jpg" class="popup" title="Photo Gallery Number Seven"><img src="images/img_gal.jpg" alt="Photo" /><br />Donec egestas</a></li>
 						</ul>
 
 						<div class="clear"></div>
-						<ul id="listpages">
-							<li class="unclick">&#171; 上一页</li>
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#" class="active">3</a></li>
-							<li class="dotted">....</li>
-							<li><a href="#">下一页 &#187;</a></li>
-						</ul>
+						<jsp:include page="/front/common/pager.jsp">
+							<jsp:param name="url" value="${ctx}/front/student!searchStudent"/>
+							<jsp:param name="params" value="studentName"/>
+						</jsp:include>
 					</div>
 					<div class="boxbigcontentbottom"></div>
 				</div>
@@ -87,12 +84,11 @@
 					<h3 class="titlenav">班级列表</h3>
 					<div class="boxnavcontent">
 						<ul class="menunav">
-							<li><a href="#">Lorem ipsum dolor</a></li>
-							<li><a href="#">Sit amet consectetur adipiscing</a></li>
-							<li><a href="#">Donec placerat</a></li>
-							<li><a href="#">Lorem ipsum dolor</a></li>
-							<li><a href="#">Sit amet consectetur adipiscing</a></li>
-							<li class="last"><a href="#">Donec placerat</a></li>
+							<s:iterator var="obj" value="roomList" status="stat">
+
+								<li <s:if test="#stat.last"> class="last"</s:if>><a href="/front/student!searchStudent?roomId=<s:property value="#obj.id"/>&studentName=<s:property value="studentName"/>"><s:property value="#obj.name"/></a></li>
+
+							</s:iterator>
 						</ul>
 					</div>
 				</div>

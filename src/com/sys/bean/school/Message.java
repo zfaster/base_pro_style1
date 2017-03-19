@@ -18,7 +18,7 @@ public class Message {
     @JoinColumn(name = "student_id")
     private Student student;
     @Column
-    private Date createTime;
+    private Date createTime = new Date();
 
     public Integer getId() {
         return id;

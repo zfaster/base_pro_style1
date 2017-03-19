@@ -91,7 +91,7 @@
 				<div class="boxbig">
 					<h1 class="titlebig">用户注册</h1>
 					<div class="boxbigcontent">
-						<form method="post" action="${ctx}/front/student!register" id="frmcontact">
+						<form method="post" action="${ctx}/front/student!register" enctype="multipart/form-data"  id="frmcontact">
 							<div>
 								<label>用户名:</label> <input type="text" id="userName" name="student.username" class="textboxcontact"/> <br />
 								<label >密码:</label> <input type="password" id="newpassword" name="student.password" class="textboxcontact" /> <br />

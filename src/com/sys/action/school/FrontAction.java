@@ -1,8 +1,10 @@
 package com.sys.action.school;
 
 import com.sys.bean.school.ClassRoom;
+import com.sys.bean.school.Message;
 import com.sys.bean.school.Student;
 import com.sys.service.school.ClassRoomService;
+import com.sys.service.school.MessageService;
 import com.sys.service.school.StudentService;
 import com.sys.system.PagerModel;
 import com.sys.web.action.BaseAction;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -24,7 +27,7 @@ import java.util.UUID;
  */
 @Controller
 @Scope("prototype")
-public class FrontAction extends BaseAction<Student>{
+public class FrontAction extends BaseAction<Object>{
 
     private Student student;
 
@@ -36,9 +39,11 @@ public class FrontAction extends BaseAction<Student>{
     private String studentName;
     private String username;
     private String password;
-    protected PagerModel<Student> sudentPg;
+    private Message message;
     @Autowired
     private StudentService studentService;
+    @Autowired
+    private MessageService messageService;
     @Autowired
     private ClassRoomService classRoomService;
     private List<ClassRoom> roomList;
@@ -76,6 +81,10 @@ public class FrontAction extends BaseAction<Student>{
         }
         sendMessage(ServletActionContext.getResponse(),"success");
     }
+    public String loginOut(){
+        ServletActionContext.getRequest().getSession().removeAttribute("student");
+        return "index";
+    }
 
     public String searchStudent(){
         LinkedHashMap<String, String> orderBy = new LinkedHashMap<String, String>();
@@ -90,9 +99,29 @@ public class FrontAction extends BaseAction<Student>{
             whereSql.append("and o.room.id = ? ");
             params.add(roomId);
         }
-        sudentPg = studentService.findScrollData(orderBy,whereSql.toString(),params.toArray());
+        pm = studentService.findScrollData(orderBy,whereSql.toString(),params.toArray());
+        roomList = classRoomService.findScrollDataNoPager();
         setPageInfo();
         return "contact";
+    }
+    public String commentList(){
+       Student student = (Student) ServletActionContext.getRequest().getSession().getAttribute("student");
+        LinkedHashMap<String, String> orderBy = new LinkedHashMap<String, String>();
+        orderBy.put("id", "desc");
+        StringBuffer whereSql = new StringBuffer(" 1 = 1 ");
+        List<Object> params = new ArrayList<Object>();
+            whereSql.append("and o.student.room.id = ? ");
+            params.add(student.getRoom().getId());
+        pm = messageService.findScrollData(orderBy,whereSql.toString(),params.toArray());
+        setPageInfo();
+        return "comment";
+    }
+
+    public String comment(){
+        Student student = (Student) ServletActionContext.getRequest().getSession().getAttribute("student");
+        message.setStudent(student);
+        messageService.save(message);
+        return commentList();
     }
 
     public Student getStudent() {
@@ -140,7 +169,11 @@ public class FrontAction extends BaseAction<Student>{
     }
 
     public void setStudentName(String studentName) {
-        this.studentName = studentName;
+        try {
+            this.studentName = new String(studentName.getBytes("iso8859-1"),"utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getUsername() {
@@ -155,13 +188,6 @@ public class FrontAction extends BaseAction<Student>{
         return password;
     }
 
-    public PagerModel<Student> getSudentPg() {
-        return sudentPg;
-    }
-
-    public void setSudentPg(PagerModel<Student> sudentPg) {
-        this.sudentPg = sudentPg;
-    }
 
     public void setPassword(String password) {
         this.password = password;
@@ -189,5 +215,21 @@ public class FrontAction extends BaseAction<Student>{
 
     public void setRoomList(List<ClassRoom> roomList) {
         this.roomList = roomList;
+    }
+
+    public Message getMessage() {
+        return message;
+    }
+
+    public void setMessage(Message message) {
+        this.message = message;
+    }
+
+    public MessageService getMessageService() {
+        return messageService;
+    }
+
+    public void setMessageService(MessageService messageService) {
+        this.messageService = messageService;
     }
 }

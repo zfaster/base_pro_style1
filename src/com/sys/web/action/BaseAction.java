@@ -31,7 +31,7 @@ public class BaseAction<T> extends ActionSupport {
 	private static Properties allowTypeFile; 
 	private int pageSize;
 	private int offset;
-	protected PagerModel<T> pm;
+	protected PagerModel pm;
 	protected Integer id;
 	protected DAO<T> baseService;
 	protected Integer[] ids;
@@ -266,11 +266,11 @@ public class BaseAction<T> extends ActionSupport {
 	}
 
 
-	public void setPm(PagerModel<T> pm) {
+	public void setPm(PagerModel<Object> pm) {
 		this.pm = pm;
 	}
 
-	public PagerModel<T> getPm() {
+	public PagerModel<Object> getPm() {
 		return pm;
 	}
 
