@@ -117,11 +117,11 @@ public class FrontAction extends BaseAction<Object>{
         return "comment";
     }
 
-    public String comment(){
+    public String comment() throws Exception {
         Student student = (Student) ServletActionContext.getRequest().getSession().getAttribute("student");
         message.setStudent(student);
         messageService.save(message);
-        return commentList();
+        return "addComment";
     }
 
     public Student getStudent() {

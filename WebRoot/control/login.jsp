@@ -69,7 +69,7 @@ if(window.parent != window){
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <LINK href="control/css/login.css" type=text/css rel=stylesheet>
-<title>智能计算与信息处理</title>
+<title>校友管理系统</title>
 </head>
 <body>
 <BODY >

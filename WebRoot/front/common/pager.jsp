@@ -46,14 +46,13 @@
 			<pg:param name="${p }" />
 		</c:forEach>
 		<pg:prev>
-			<a href="${pageUrl }">上一页</a>
+			<li><a href="${pageUrl }">上一页</a></li>
 		</pg:prev>
 		<pg:pages>
 			<c:if test="${currentPageNumber eq pageNumber }">
 				<li><a class="active" href="${pageUrl }">${pageNumber}</a></li>
 			</c:if>
 			<c:if test="${currentPageNumber ne pageNumber }">
-				<a href="${pageUrl }">${pageNumber}</a>
 				<li><a href="${pageUrl }">${pageNumber}</a></li>
 			</c:if>
 		</pg:pages>

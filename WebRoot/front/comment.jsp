@@ -53,14 +53,14 @@
 						<ul id="listcomment">
 							<s:iterator value="pm.datas" var="obj" status="stat">
 								<li>
-									<s:if test="#obj.getImagePath() == null">
-										<img src="images/nopicture2.jpg" alt="<s:property value="#obj.student.name"/>" class="imgavatar" />
+									<s:if test="#obj.student.getImagePath() == null">
+										<img src="images/nopicture2.jpg" width="50px" height="50px" alt="<s:property value="#obj.student.name"/>" class="imgavatar" />
 									</s:if>
 									<s:else>
-										<img src="<s:property value="#obj.student.getImagePath()"/>" alt="<s:property value="#obj.student.name"/>" class="imgavatar" />
+										<img width="50px" height="50px" src="/<s:property value="#obj.student.getImagePath()"/>" alt="<s:property value="#obj.student.name"/>" class="imgavatar" />
 									</s:else>
 									<div class="placecomment">
-										<h3><strong><s:property value="#obj.student.name"/></strong>, <s:date name="#obj.student" format="yyyy-MM-dd HH:mm:ss"/></h3>
+										<h3><strong><s:property value="#obj.student.realname"/></strong>, <s:date name="#obj.createTime" format="yyyy-MM-dd HH:mm:ss"/></h3>
 										<p>
 											<s:property value="#obj.content"/>
 										</p>
@@ -71,13 +71,13 @@
 
 						</ul>
 						<jsp:include page="/front/common/pager.jsp">
-							<jsp:param name="url" value="${ctx}/front/student!commetList"/>
+							<jsp:param name="url" value="${ctx}/front/student!commentList"/>
 						</jsp:include>
 						<h2 class="subtitle">发表留言</h2>
 						<form method="post" action="${ctx}/front/student!comment" id="frmcomment">
 							<div>
 								<label for="lblcomment">内容 </label>
-								<textarea name="message.comment" cols="80" rows="10" id="lblcomment" class="textareacomment"></textarea><br />
+								<textarea name="message.content" cols="80" rows="10" id="lblcomment" class="textareacomment"></textarea><br />
 								<input type="submit" name="submitcomment" class="submitcomment" value="发表留言" />
 							</div>
 						</form>

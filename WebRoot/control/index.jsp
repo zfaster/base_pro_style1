@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<ul id="dleft_tab2" style="display:none;">
 					<li id="now23"><a href="control/school/classRoom" onClick="go_cmdurl('班级管理',this)" target="content1" title="班级管理">班级管理</a></li>
 					<li id="now22"><a href="control/school/student" onClick="go_cmdurl('校友管理',this)" target="content1" title="校友管理">校友管理</a></li>
-					<li id="now27"><a href="http://www.mianfeimoban.com/admin-templates/" onClick="go_cmdurl('留言管理',this)" target="content1" title="留言管理">留言管理</a></li>
+					<li id="now27"><a href="control/school/message" onClick="go_cmdurl('留言管理',this)" target="content1" title="留言管理">留言管理</a></li>
 				</ul>
 
 			</div>
