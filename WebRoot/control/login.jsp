@@ -138,7 +138,13 @@ http-equiv="X-UA-Compatible">
     }
 
 </STYLE>
-
+<script type="text/javascript">
+    <!--
+    if(window.parent != window){
+        window.parent.location = window.location;
+    }
+    //-->
+</script>
 <SCRIPT type="text/javascript">
     $(function () {
         //得到焦点
