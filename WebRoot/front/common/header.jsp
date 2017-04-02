@@ -19,11 +19,13 @@
 </script>
 <div id="header">
     <div id="headertop">
-        <a href="#" class="replace" id="logo"><span></span>Rushhour - Your Company Slogan</a>
+        <a href="#" class="replace" id="logo"><span></span></a>
+
+
         <div id="loginarea">
             <s:if test="#session.student==null">
                 <p class="notlogin">您尚未登录</p>
-                <p class="loginbut"><a href="#" class="butlogin" id="butslide">登录</a> <span>or</span> <a href="${ctx}/front/student!registerInput" class="butlogin">注册</a></p>
+                <p class="loginbut"><a href="javascript:void(0)" class="butlogin" id="butslide">登录</a> <span>or</span> <a href="${ctx}/front/student!registerInput" class="butlogin">注册</a></p>
                 <div id="panellogin">
                     <form method="post" action="#" id="frmlogin">
                         <div>
@@ -37,14 +39,13 @@
             <s:else>
                 <p class="notlogin">欢迎同学，<s:property value="#session.student.realname"/></p>
                 <p class="loginbut"><a class="butlogin"  href="${ctx}/front/student!loginOut">退出</a></p>
-
             </s:else>
 
         </div>
     </div>
     <div id="placemainmenu">
         <ul id="mainmenu">
-            <li <c:if test="${empty param.target}">class="active"</c:if> ><a href="index.jsp">首页</a></li>
+            <li <c:if test="${empty param.target}">class="active"</c:if> ><a href="${ctx}/front/student!index">首页</a></li>
             <s:if test="#session.student!=null">
                 <li <c:if test="${param.target eq 'comment'}">class="active"</c:if> ><a href="${ctx}/front/student!commentList">校友留言</a></li>
             </s:if>

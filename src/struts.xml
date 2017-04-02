@@ -73,7 +73,7 @@
 					</result>
 					<result name="contact">/front/contact.jsp
 					</result>
-					<result name="index">/front/index.jsp
+					<result name="index">/front/main.jsp
 					</result>
 					<result name="comment">/front/comment.jsp
 					</result>

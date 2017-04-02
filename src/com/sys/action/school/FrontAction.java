@@ -1,9 +1,11 @@
 package com.sys.action.school;
 
 import com.sys.bean.school.ClassRoom;
+import com.sys.bean.school.IndexImage;
 import com.sys.bean.school.Message;
 import com.sys.bean.school.Student;
 import com.sys.service.school.ClassRoomService;
+import com.sys.service.school.IndexImageService;
 import com.sys.service.school.MessageService;
 import com.sys.service.school.StudentService;
 import com.sys.system.PagerModel;
@@ -46,7 +48,15 @@ public class FrontAction extends BaseAction<Object>{
     private MessageService messageService;
     @Autowired
     private ClassRoomService classRoomService;
+    @Autowired
+    private IndexImageService indexImageService;
+
     private List<ClassRoom> roomList;
+    private List<IndexImage> imageList;
+    public String index(){
+        imageList = indexImageService.findScrollDataNoPager();
+        return "index";
+    }
     public String registerInput(){
         roomList = classRoomService.findScrollDataNoPager();
         return "register";
@@ -68,7 +78,7 @@ public class FrontAction extends BaseAction<Object>{
             studentService.update(student);
         }
         ServletActionContext.getRequest().getSession().setAttribute("student",student);
-        return "index";
+        return index();
     }
     public void login(){
         try {
@@ -83,7 +93,7 @@ public class FrontAction extends BaseAction<Object>{
     }
     public String loginOut(){
         ServletActionContext.getRequest().getSession().removeAttribute("student");
-        return "index";
+        return index();
     }
 
     public String searchStudent(){
@@ -227,6 +237,14 @@ public class FrontAction extends BaseAction<Object>{
 
     public MessageService getMessageService() {
         return messageService;
+    }
+
+    public List<IndexImage> getImageList() {
+        return imageList;
+    }
+
+    public void setImageList(List<IndexImage> imageList) {
+        this.imageList = imageList;
     }
 
     public void setMessageService(MessageService messageService) {

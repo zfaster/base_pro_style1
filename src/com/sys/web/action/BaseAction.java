@@ -24,6 +24,7 @@ import com.sys.system.FieldType;
 import com.sys.system.PagerModel;
 import com.sys.system.Renewable;
 import com.sys.system.SystemContext;
+import org.apache.struts2.ServletActionContext;
 
 
 public class BaseAction<T> extends ActionSupport {
@@ -156,9 +157,9 @@ public class BaseAction<T> extends ActionSupport {
 		}
 		return target;
 	}
-	public String delete() throws Exception {
+	public void delete() throws Exception {
 		baseService.delete(ids);
-		return "del_success";
+		sendMessage(ServletActionContext.getResponse(),"删除成功");
 	}
 	/**
 	 * 自动注入可修改的属性值,指定的类型

@@ -28,7 +28,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               </tr>
             </table></td>
             <td><div align="right"><span class="STYLE1">
-             &nbsp;&nbsp;<img src="control/images/add.gif" width="10" height="10" /><a href="javascript:openWin('${actionPath}!updateInput','添加',600,200,1)">添加</a>
              &nbsp;   &nbsp;
              <img src="control/images/del.gif" width="10" height="10" /> <a href="javascript:delAll('${actionPath}!delete','ids')">删除</a>    &nbsp;&nbsp;   &nbsp;
              </span><span class="STYLE1"> &nbsp;</span></div></td>
@@ -39,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </tr>
   <tr>
   	<td>
-  		<form action="control/school/messgae" method="get">
+  		<form action="control/school/message" method="get">
   		<table width="100%" border="0" cellspacing="0" cellpadding="0">
   			<tr>
   				<td align="right">内容：</td>

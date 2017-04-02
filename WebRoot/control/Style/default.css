@@ -40,7 +40,7 @@ a:active {text-decoration:none;color:#999;}
 .strong {font-weight:600!important;}
 /* ============布局============ */
 /* 头部 */
-#header {margin:0;height:35px;clear:both;}
+#header {margin:0;height:35px;clear:both;background-color:#008ead}
 #header dt {float:left;margin:7px 0 0 5px;width:180px;height:29px;background:url("logo.png") no-repeat left top;text-indent:-9999px;}
 #header dd {float:right;margin:5px 4px 0 0px;color:#fff;height:20px;}
 #header dd li {float:left;}

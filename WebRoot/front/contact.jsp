@@ -29,7 +29,6 @@
 	<script src="script/jcarousel.js" type="text/javascript"></script>
 	<script src="script/slideshow.js" type="text/javascript"></script>
 	<script src="script/twitter.js" type="text/javascript"></script>
-	<script src="script/gettwitter.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(function() {
 			$("#butslide").click(function(){
@@ -64,7 +63,10 @@
 										<img src="/<s:property value="#obj.getImagePath()" />" width="100" height="100" alt="<s:property value="#obj.realname"/>" />
 									</s:else>
 									<br />
-									<s:property value="#obj.realname"/></a>
+									姓名:<s:property value="#obj.realname"/>
+                                    <br />
+                                    电话：<s:property value="#obj.phone"/>
+                                </a>
 
 								</li>
 							</s:iterator>

@@ -26,7 +26,6 @@
 	<script src="script/ui_tabs.js" type="text/javascript"></script>
 	<script src="script/lightbox.js" type="text/javascript"></script>
 	<script src="script/twitter.js" type="text/javascript"></script>
-	<script src="script/gettwitter.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(function() {
 			$("#butslide").click(function(){

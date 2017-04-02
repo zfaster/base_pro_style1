@@ -24,15 +24,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <tr>
             <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td width="94%" ><span class="STYLE1"> 班级信息列表</span></td>
+                <td width="94%" ><span class="STYLE1"> 首页图片</span></td>
               </tr>
             </table></td>
             <td><div align="right"><span class="STYLE1">
-             &nbsp;&nbsp;
-<s:if test="#session.employee.type.name()=='SUPER_ADMIN'">
-                <img src="control/images/add.gif" width="10" height="10" /><a href="javascript:openWin('${actionPath}!updateInput','添加',600,200,1)">添加</a>
-    </s:if>
-    &nbsp;   &nbsp;
+             &nbsp;&nbsp;<img src="control/images/add.gif" width="10" height="10" /><a href="javascript:openWin('${actionPath}!updateInput','添加',600,200,1)">添加</a>
+             &nbsp;   &nbsp;
              <img src="control/images/del.gif" width="10" height="10" /> <a href="javascript:delAll('${actionPath}!delete','ids')">删除</a>    &nbsp;&nbsp;   &nbsp;
              </span><span class="STYLE1"> &nbsp;</span></div></td>
           </tr>
@@ -42,15 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </tr>
   <tr>
   	<td>
-  		<form action="control/school/classRoom" method="get">
-  		<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  			<tr>
-  				<td align="right">班级名称：</td>
-  				<td width="160px"><input type="text" name="roomName" value="<s:property value="roomName"/>"></td>
-  				<td><input type="submit" class="buttom" name="submit" value="查询"></td>
-  			</tr>
-  		</table>
-  		</form>
+
   	</td>
   </tr>
   <tr>
@@ -61,9 +50,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <input type="checkbox" name="checkbox" onclick="selectAll(this)"/>
         </div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">序号</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">班级名称</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">负责人</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">基本操作</span></div></td>
+        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">图片</span></div></td>
+        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">标题</span></div></td>
+          <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">内容</span></div></td>
+          <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">基本操作</span></div></td>
       </tr>
       <s:if test="pm.datas != null">
       <s:iterator value="pm.datas" var="obj" status="stat">
@@ -72,14 +62,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <input type="checkbox" name="id" value="<s:property value="#obj.id"/>"/>
         </div></td>
         <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#stat.index+1"/></div></td>
-        <td height="15%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.name"/></div></td>
-        <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.employee.realname"/></div></td>
-        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
-            <s:if test="#session.employee.type.name()=='SUPER_ADMIN'">
-                <a href="javascript:del('${actionPath}!delete?ids=<s:property value="#obj.id"/>')" title="">删除</a> |
-            </s:if>
+        <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
+          <s:if test="#obj.getImagePath() == null">
+            <img src="control/images/nopicture2.jpg" width="60" height="50"/>
+          </s:if>
+          <s:else>
+            <img src="<s:property value="#obj.getImagePath()" />" width="60" height="50"/>
+          </s:else>
+        </div></td>
+        <td height="15%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.title"/></div></td>
+        <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.content"/></div></td>
 
-                <a href="javascript:openWin('${actionPath}!updateInput?id=<s:property value="#obj.id"/>','更新员工',600,200,1)" title="">编辑</a>
+          <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
+                <a href="javascript:del('${actionPath}!delete?ids=<s:property value="#obj.id"/>')" title="">删除</a> |
+                <a href="javascript:openWin('${actionPath}!updateInput?id=<s:property value="#obj.id"/>','更新',600,200,1)" title="">编辑</a>
         </div>
         </td>
       </tr>
@@ -96,8 +92,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <tr>
     <td height="30">
 		<jsp:include page="/control/common/pager.jsp">
-			<jsp:param name="url" value="control/school/classRoom"/>
-			<jsp:param name="params" value="roomName"/>
+			<jsp:param name="url" value="control/school/indexImage"/>
 		</jsp:include>
     </td>
  </tr>

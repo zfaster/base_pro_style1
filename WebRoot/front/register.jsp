@@ -26,7 +26,6 @@
 	<script src="script/ui_tabs.js" type="text/javascript"></script>
 	<script src="script/lightbox.js" type="text/javascript"></script>
 	<script src="script/twitter.js" type="text/javascript"></script>
-	<script src="script/gettwitter.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(function() {
 			$("#butslide").click(function(){
@@ -115,15 +114,14 @@
 			</div>
 			<div id="nav">
 				<div class="boxnav">
-					<h3 class="titlenav">学校班级</h3>
+					<h3 class="titlenav">班级列表</h3>
 					<div class="boxnavcontent">
 						<ul class="menunav">
-							<li><a>Lorem ipsum dolor</a></li>
-							<li><a>Sit amet consectetur adipiscing</a></li>
-							<li><a>Donec placerat</a></li>
-							<li><a>Lorem ipsum dolor</a></li>
-							<li><a>Sit amet consectetur adipiscing</a></li>
-							<li class="last"><a>Donec placerat</a></li>
+							<s:iterator var="obj" value="roomList" status="stat">
+
+								<li <s:if test="#stat.last"> class="last"</s:if>><a href="/front/student!searchStudent?roomId=<s:property value="#obj.id"/>&studentName=<s:property value="studentName"/>"><s:property value="#obj.name"/></a></li>
+
+							</s:iterator>
 						</ul>
 					</div>
 				</div>

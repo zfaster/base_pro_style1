@@ -16,9 +16,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 <div id="header">
-	<img  src="control/images/logo.png" style="float: left;">
+	<div style="float: left;margin: 10px 0px 0px 10px">
+		<span style="font-size: 20px;font-weight: bold">校友录后台管理系统</span>
+	</div>
 	<div style="float: right;">
-		<a href="control/privilege/employee!quit"><font color="white">退出</font></a>
+		<div style="float: left;margin: 10px 10px 0px 0px">
+			<span style="font-size: 16px;font-weight: bold;margin-right: 10px">欢迎您，<s:property value="#session.employee.username"/></span>
+			<span style="font-size: 16px;font-weight: bold">
+				<a href="control/privilege/employee!quit">退出</a>
+			</span>
+		</div>
 	</div>
 </div>
 
@@ -28,18 +35,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="menu_top"></div>
 		<div class="menu" id="TabPage3">
 			<ul id="TabPage2">
-				<li id="left_tab1" class="Selected" onClick="javascript:border_left('TabPage2','left_tab1');" title="管理员">管理</li>
-				<li id="left_tab2" onClick="javascript:border_left('TabPage2','left_tab2');" title="日志">班级</li>
+				<s:if test="#session.employee.type.name()=='SUPER_ADMIN'">
+					<li id="left_tab1" class="Selected" onClick="javascript:border_left('TabPage2','left_tab1');" title="管理员">管理</li>
+					<li id="left_tab2" onClick="javascript:border_left('TabPage2','left_tab2');" title="日志">班级</li>
+				</s:if>
+				<s:else>
+					<li id="left_tab2" class="Selected" onClick="javascript:border_left('TabPage2','left_tab2');" title="日志">班级</li>
+				</s:else>
 			</ul>
 			<div id="left_menu_cnt">
-				<ul id="dleft_tab1">
-					<li id="now11"><a href="control/privilege/employee"  onClick="go_cmdurl('员工管理',this)" target="content1" title="员工管理">员工管理</a></li>
-
-				</ul>
-				<ul id="dleft_tab2" style="display:none;">
+				<s:if test="#session.employee.type.name()=='SUPER_ADMIN'">
+						<ul id="dleft_tab1">
+							<li id="now11"><a href="control/privilege/employee"  onClick="go_cmdurl('员工管理',this)" target="content1" title="员工管理">员工管理</a></li>
+							<li id="now12"><a href="control/school/indexImage"  onClick="go_cmdurl('首页图片',this)" target="content1" title="首页图片">首页图片</a></li>
+						</ul>
+				</s:if>
+				<ul id="dleft_tab2" <s:if test="#session.employee.type.name()=='SUPER_ADMIN'">style="display:none;"</s:if>>
 					<li id="now23"><a href="control/school/classRoom" onClick="go_cmdurl('班级管理',this)" target="content1" title="班级管理">班级管理</a></li>
-					<li id="now22"><a href="control/school/student" onClick="go_cmdurl('校友管理',this)" target="content1" title="校友管理">校友管理</a></li>
-					<li id="now27"><a href="control/school/message" onClick="go_cmdurl('留言管理',this)" target="content1" title="留言管理">留言管理</a></li>
+					<s:if test="#session.employee.type.name()!='SUPER_ADMIN'">
+						<li id="now22"><a href="control/school/student" onClick="go_cmdurl('校友管理',this)" target="content1" title="校友管理">校友管理</a></li>
+						<li id="now27"><a href="control/school/message" onClick="go_cmdurl('留言管理',this)" target="content1" title="留言管理">留言管理</a></li>
+					</s:if>
 				</ul>
 
 			</div>
@@ -50,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="right">
 		<div id="cnt" style="height: 99%">
 		  <div id="dTab1" class="Box">
-		  <iframe id="content1" src="#" name="content1" frameborder="0" scrolling="auto" style="height: 100%"></iframe>
+		  <iframe id="content1"  name="content1" frameborder="0" scrolling="auto" style="height: 100%"></iframe>
 		  </div>
 		</div>
 	</div>
