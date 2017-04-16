@@ -8,6 +8,8 @@ import com.sys.system.Condition;
 import com.sys.system.FieldType;
 import com.sys.system.Renewable;
 
+import java.util.List;
+
 /**
  * 员工
  */
@@ -50,8 +52,8 @@ public class Employee {
 	@Column
 	@Enumerated
 	private AdminType type;
-	@OneToOne(mappedBy = "employee")
-	private ClassRoom classRoom;
+	@OneToMany(mappedBy = "employee",fetch = FetchType.EAGER)
+	private List<ClassRoom> classRoom;
 
 	/**
 	 * 获得图片保存路径
@@ -69,7 +71,7 @@ public class Employee {
 	 */
 	public String getSavePath(){
 		if(this.username != null){
-			return "images/employee/"+this.id+"_"+this.username+"/";
+			return "/images/employee/"+this.id+"_"+this.username+"/";
 		}
 		return null;
 	}
@@ -149,11 +151,11 @@ public class Employee {
 		this.sex = sex;
 	}
 
-	public ClassRoom getClassRoom() {
+	public List<ClassRoom> getClassRoom() {
 		return classRoom;
 	}
 
-	public void setClassRoom(ClassRoom classRoom) {
+	public void setClassRoom(List<ClassRoom> classRoom) {
 		this.classRoom = classRoom;
 	}
 }

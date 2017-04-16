@@ -4,10 +4,7 @@ import com.sys.bean.school.ClassRoom;
 import com.sys.bean.school.IndexImage;
 import com.sys.bean.school.Message;
 import com.sys.bean.school.Student;
-import com.sys.service.school.ClassRoomService;
-import com.sys.service.school.IndexImageService;
-import com.sys.service.school.MessageService;
-import com.sys.service.school.StudentService;
+import com.sys.service.school.*;
 import com.sys.system.PagerModel;
 import com.sys.web.action.BaseAction;
 import org.apache.commons.io.FileUtils;
@@ -50,6 +47,10 @@ public class FrontAction extends BaseAction<Object>{
     private ClassRoomService classRoomService;
     @Autowired
     private IndexImageService indexImageService;
+    @Autowired
+    private ArticleService articleService;
+    @Autowired
+    private StarManService starManService;
 
     private List<ClassRoom> roomList;
     private List<IndexImage> imageList;
@@ -78,6 +79,41 @@ public class FrontAction extends BaseAction<Object>{
             studentService.update(student);
         }
         ServletActionContext.getRequest().getSession().setAttribute("student",student);
+        return index();
+    }
+    public String newsList(){
+        LinkedHashMap<String, String> orderBy = new LinkedHashMap<>();
+        orderBy.put("id","desc");
+        pm = articleService.findScrollData(orderBy);
+        setPageInfo();
+        return "newsList";
+    }
+    public String newsDetial(){
+        object = articleService.find(id);
+        return "newsDetial";
+    }
+    public String starList(){
+        LinkedHashMap<String, String> orderBy = new LinkedHashMap<>();
+        orderBy.put("id","desc");
+        pm = starManService.findScrollData(orderBy);
+        setPageInfo();
+        return "starList";
+    }
+    public String modify() throws IOException {
+        Student loginUser = (Student) ServletActionContext.getRequest().getSession().getAttribute("student");
+        loginUser.setAddress(student.getAddress());
+        loginUser.setPhone(student.getPhone());
+        loginUser.setRealname(student.getRealname());
+        if(image != null){
+            if(!checkFileType(imageContentType,imageFileName)) throw new RuntimeException("请上传图片文件");
+            String path = ServletActionContext.getServletContext().getRealPath(loginUser.getSavePath());
+            imageFileName = UUID.randomUUID().toString()+imageFileName.substring(imageFileName.lastIndexOf("."));//生成UUID文件名
+            File imageDir = new File(path);
+            if(!imageDir.exists()) imageDir.mkdirs();//创建保存图片的文件夹
+            FileUtils.copyFile(image, new File(path+"/"+imageFileName));
+            loginUser.setImage(imageFileName);
+        }
+        studentService.update(loginUser);
         return index();
     }
     public void login(){
@@ -115,13 +151,13 @@ public class FrontAction extends BaseAction<Object>{
         return "contact";
     }
     public String commentList(){
-       Student student = (Student) ServletActionContext.getRequest().getSession().getAttribute("student");
+       //Student student = (Student) ServletActionContext.getRequest().getSession().getAttribute("student");
         LinkedHashMap<String, String> orderBy = new LinkedHashMap<String, String>();
         orderBy.put("id", "desc");
         StringBuffer whereSql = new StringBuffer(" 1 = 1 ");
         List<Object> params = new ArrayList<Object>();
-            whereSql.append("and o.student.room.id = ? ");
-            params.add(student.getRoom().getId());
+            /*whereSql.append("and o.student.room.id = ? ");
+            params.add(student.getRoom().getId());*/
         pm = messageService.findScrollData(orderBy,whereSql.toString(),params.toArray());
         setPageInfo();
         return "comment";

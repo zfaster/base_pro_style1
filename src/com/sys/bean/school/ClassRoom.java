@@ -17,7 +17,7 @@ public class ClassRoom {
     @Column
     @Renewable
     private String name;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "employee_id")
     @Renewable
     private Employee employee;

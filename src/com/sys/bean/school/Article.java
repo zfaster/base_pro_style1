@@ -3,13 +3,14 @@ package com.sys.bean.school;
 import com.sys.system.Renewable;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
- * 首页图片简介
+ * 新闻
  */
 @Entity
-@Table(name = "t_index_image")
-public class IndexImage {
+@Table(name = "t_article")
+public class Article {
     @Id
     @GeneratedValue
     private Integer id;
@@ -21,7 +22,7 @@ public class IndexImage {
     @Renewable
     private String content;
     @Column
-    private String image;
+    private Date createTime = new Date();
 
     public Integer getId() {
         return id;
@@ -47,32 +48,11 @@ public class IndexImage {
         this.content = content;
     }
 
-    public String getImage() {
-        return image;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    /**
-     * 获得图片保存路径
-     * @return
-     */
-    public String getImagePath(){
-        if(this.id != null && this.image != null){
-            return "images/index/"+this.id+"/"+this.image;
-        }
-        return null;
-    }
-    /**
-     * 获得图片默认保存路劲
-     * @return
-     */
-    public String getSavePath(){
-        if(this.id != null){
-            return "/images/index/"+this.id+"/";
-        }
-        return null;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

@@ -1,6 +1,7 @@
 package com.sys.action.school;
 
 import com.sys.bean.privilege.Employee;
+import com.sys.bean.school.ClassRoom;
 import com.sys.bean.school.Message;
 import com.sys.bean.school.Student;
 import com.sys.service.base.DAO;
@@ -34,8 +35,20 @@ public class MessageAction extends BaseAction<Message> {
 		orderBy.put("id", "desc");
 		StringBuffer whereSql = new StringBuffer(" 1 = 1 ");
 		List<Object> params = new ArrayList<Object>();
-			whereSql.append("and o.student.room.id = ? ");
-			params.add(employee.getClassRoom().getId());
+		if(content != null ){
+			whereSql.append("and o.content like ? ");
+			params.add("%"+content+"%");
+		}
+		if(employee.getClassRoom()!=null && employee.getClassRoom().size()>0){
+			whereSql.append("and o.student.room.id in (  ");
+			for(ClassRoom classRoom : employee.getClassRoom()){
+				whereSql.append("?,");
+				params.add(classRoom.getId());
+			}
+			whereSql.deleteCharAt(whereSql.lastIndexOf(","));
+			whereSql.append(")  ");
+		}
+
 		if(content != null ){
 			whereSql.append("and o.content like ? ");
 			params.add("%"+content+"%");

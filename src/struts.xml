@@ -77,6 +77,13 @@
 					</result>
 					<result name="comment">/front/comment.jsp
 					</result>
+					<result name="newsList">/front/newsList.jsp
+					</result>
+					<result name="starList">/front/starList.jsp
+					</result>
+					<result name="newsDetial">/front/newsDetial.jsp
+					</result>
+
 					<result name="addComment" type="redirectAction">student!commentList</result>
 				</action>
 			</package>

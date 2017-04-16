@@ -51,7 +51,7 @@ public class EmployeeAction extends BaseAction<Employee> {
 		if(select){
 			whereSql.append("and o.type = ? ");
 			params.add(AdminType.CLASS_ADMIN);
-			whereSql.append("and not exists (select cr from ClassRoom cr where cr.employee.id = o.id)");
+			//whereSql.append("and not exists (select cr from ClassRoom cr where cr.employee.id = o.id)");
 		}
 		pm = baseService.findScrollData(
 				orderBy,whereSql.toString(),params.toArray());

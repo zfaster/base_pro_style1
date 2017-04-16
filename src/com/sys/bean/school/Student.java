@@ -48,7 +48,7 @@ public class Student {
      */
     public String getSavePath(){
         if(this.username != null){
-            return "images/student/"+this.id+"_"+this.username+"/";
+            return "/images/student/"+this.id+"_"+this.username+"/";
         }
         return null;
     }
