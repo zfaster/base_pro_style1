@@ -48,6 +48,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<ul id="dleft_tab1">
 							<li id="now11"><a href="control/privilege/employee"  onClick="go_cmdurl('员工管理',this)" target="content1" title="员工管理">员工管理</a></li>
 							<li id="now12"><a href="control/school/indexImage"  onClick="go_cmdurl('首页图片',this)" target="content1" title="首页图片">首页图片</a></li>
+							<li id="now13"><a href="control/school/article"  onClick="go_cmdurl('新闻动态',this)" target="content1" title="新闻动态">新闻动态</a></li>
+							<li id="now16"><a href="control/school/starMan"  onClick="go_cmdurl('风采人物',this)" target="content1" title="风采人物">风采人物</a></li>
 						</ul>
 				</s:if>
 				<ul id="dleft_tab2" <s:if test="#session.employee.type.name()=='SUPER_ADMIN'">style="display:none;"</s:if>>

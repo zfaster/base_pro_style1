@@ -195,7 +195,7 @@ http-equiv="X-UA-Compatible">
         <DIV class="initial_right_hand" id="right_hand"></DIV>
     </DIV>
     <P style="padding: 30px 0px 10px; position: relative;"><SPAN
-            class="u_logo"></SPAN> <INPUT class="ipt" type="text" name="username" placeholder="请输入用户名或邮箱" value="">
+            class="u_logo"></SPAN> <INPUT class="ipt" type="text" name="username" placeholder="请输入用户名" value="">
     </P>
     <P style="position: relative;"><SPAN class="p_logo"></SPAN>
         <INPUT class="ipt" id="password" type="password" name="password" placeholder="请输入密码" value="">

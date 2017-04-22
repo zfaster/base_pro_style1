@@ -53,7 +53,7 @@
 						<div id="shadowslideshow"></div>
 						<ul>
 							<s:iterator value="imageList" var="image">
-								<li><img width="503px" height="190px" src="/<s:property value="#image.imagePath"/>" alt="<s:property value="#image.title"/>" /></li>
+								<li><img width="503px" height="190px" src="<s:property value="#image.imagePath"/>" alt="<s:property value="#image.title"/>" /></li>
 							</s:iterator>
 						</ul>
 					</div>

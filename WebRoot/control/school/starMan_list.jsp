@@ -24,11 +24,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <tr>
             <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td width="94%" ><span class="STYLE1"> 校友信息列表</span></td>
+                <td width="94%" ><span class="STYLE1"> 风彩人物</span></td>
               </tr>
             </table></td>
             <td><div align="right"><span class="STYLE1">
-             &nbsp;   &nbsp;
+             &nbsp;&nbsp;
+                <img src="control/images/add.gif" width="10" height="10" /><a href="javascript:openWin('${actionPath}!updateInput','添加',600,200,1)">添加</a>
+    &nbsp;   &nbsp;
              <img src="control/images/del.gif" width="10" height="10" /> <a href="javascript:delAll('${actionPath}!delete','ids')">删除</a>    &nbsp;&nbsp;   &nbsp;
              </span><span class="STYLE1"> &nbsp;</span></div></td>
           </tr>
@@ -38,11 +40,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </tr>
   <tr>
   	<td>
-  		<form action="control/school/student" method="get">
+  		<form action="control/school/starMan" method="get">
   		<table width="100%" border="0" cellspacing="0" cellpadding="0">
   			<tr>
-  				<td align="right">校友名称：</td>
-  				<td width="160px"><input type="text" name="realname" value="<s:property value="realname"/>"></td>
+  				<td align="right">名称：</td>
+  				<td width="160px"><input type="text" name="name" value="<s:property value="name"/>"></td>
   				<td><input type="submit" class="buttom" name="submit" value="查询"></td>
   			</tr>
   		</table>
@@ -57,10 +59,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <input type="checkbox" name="checkbox" onclick="selectAll(this)"/>
         </div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">序号</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">姓名</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">电话</span></div></td>
-          <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">头像</span></div></td>
-          <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">地址</span></div></td>
+        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">名称</span></div></td>
+          <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">照片</span></div></td>
+          <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">身份</span></div></td>
+          <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">简介</span></div></td>
           <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">基本操作</span></div></td>
       </tr>
       <s:if test="pm.datas != null">
@@ -70,21 +72,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <input type="checkbox" name="id" value="<s:property value="#obj.id"/>"/>
         </div></td>
         <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#stat.index+1"/></div></td>
-        <td height="15%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.realname"/></div></td>
-        <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.phone"/></div></td>
+        <td height="15%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.name"/></div></td>
           <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
               <s:if test="#obj.getImagePath() == null">
-                  <img src="control/images/nopicture2.jpg" width="50" height="60"/>
+                  <img src="control/images/nopicture2.jpg" width="60" height="50"/>
               </s:if>
               <s:else>
-                  <img src="<s:property value="#obj.getImagePath()" />" width="50" height="60"/>
+                  <img src="<s:property value="#obj.getImagePath()" />" width="60" height="50"/>
               </s:else>
-
           </div></td>
-          <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.address"/></div></td>
-
+          <td height="15%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.type"/></div></td>
+          <td height="15%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.intro"/></div></td>
           <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
-                <a href="javascript:del('${actionPath}!delete?ids=<s:property value="#obj.id"/>')" title="">删除</a>
+                <a href="javascript:del('${actionPath}!delete?ids=<s:property value="#obj.id"/>')" title="">删除</a> |
+                <a href="javascript:openWin('${actionPath}!updateInput?id=<s:property value="#obj.id"/>','更新',600,200,1)" title="">编辑</a>
         </div>
         </td>
       </tr>
@@ -101,8 +102,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <tr>
     <td height="30">
 		<jsp:include page="/control/common/pager.jsp">
-			<jsp:param name="url" value="control/school/student"/>
-			<jsp:param name="params" value="realname"/>
+			<jsp:param name="url" value="control/school/starMan"/>
+			<jsp:param name="params" value="name"/>
 		</jsp:include>
     </td>
  </tr>

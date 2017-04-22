@@ -46,16 +46,24 @@
     <div id="placemainmenu">
         <ul id="mainmenu">
             <li <c:if test="${empty param.target}">class="active"</c:if> ><a href="${ctx}/front/student!index">首页</a></li>
-            <s:if test="#session.student!=null">
+
                 <li <c:if test="${param.target eq 'comment'}">class="active"</c:if> ><a href="${ctx}/front/student!commentList">校友留言</a></li>
+            <li <c:if test="${param.target eq 'article'}">class="active"</c:if> ><a href="${ctx}/front/student!newsList">新闻动态</a></li>
+            <li <c:if test="${param.target eq 'star'}">class="active"</c:if> ><a href="${ctx}/front/student!starList">风采人物</a></li>
+
+            <s:if test="#session.student!=null">
+                <li <c:if test="${param.target eq 'contact'}">class="active"</c:if>><a href="${ctx}/front/student!searchStudent">校友录</a></li>
+                <li <c:if test="${param.target eq 'user'}">class="active"</c:if>><a href="${ctx}/front/user.jsp">我的信息</a></li>
+
             </s:if>
-            <li <c:if test="${param.target eq 'contact'}">class="active"</c:if>><a href="${ctx}/front/student!searchStudent">校友录</a></li>
         </ul>
+        <s:if test="#session.student!=null">
         <form method="get" action="${ctx}/front/student!searchStudent" id="frmsearch">
             <div>
                 <input type="text" value="${studentName}" name="studentName" class="textboxsearch" placeholder="查找校友"/> <input type="submit" name="submitsearch" class="submitsearch" value="搜索" />
             </div>
         </form>
+        </s:if>
         <div class="clear"></div>
     </div>
 </div>
