@@ -493,3 +493,14 @@ $.ui.mouse.defaults = {
 };
 
 })(jQuery);
+$(function(){
+	if($("#wrapper")[0]){
+if($("#wrapper").height()<$(document).height()){
+	var hh = $(document).height();
+	var diff = hh- $("#wrapper").height();
+	$("#content").height($("#content").height()+diff);
+	$("#wrapper").height(hh);
+
+}
+	}
+})
