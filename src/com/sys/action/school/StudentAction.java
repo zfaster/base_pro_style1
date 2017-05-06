@@ -1,5 +1,7 @@
 package com.sys.action.school;
 
+import com.sys.bean.privilege.Employee;
+import com.sys.bean.school.ClassRoom;
 import com.sys.bean.school.Student;
 import com.sys.service.base.DAO;
 import com.sys.web.action.BaseAction;
@@ -26,6 +28,8 @@ public class StudentAction extends BaseAction<Student> {
 
 	@Override
 	public String execute() throws Exception {
+		Employee employee = (Employee) ServletActionContext.getRequest().getSession().getAttribute("employee");
+
 		LinkedHashMap<String, String> orderBy = new LinkedHashMap<String, String>();
 		orderBy.put("id", "desc");
 		StringBuffer whereSql = new StringBuffer(" 1 = 1 ");
@@ -33,6 +37,17 @@ public class StudentAction extends BaseAction<Student> {
 		if(realname != null && !"".equals(realname)){
 			whereSql.append("and o.realname like ? ");
 			params.add("%"+realname+"%");
+		}
+		if(employee.getClassRoom()!=null && employee.getClassRoom().size()>0){
+			whereSql.append("and o.room.id in (  ");
+			for(ClassRoom classRoom : employee.getClassRoom()){
+				whereSql.append("?,");
+				params.add(classRoom.getId());
+			}
+			whereSql.deleteCharAt(whereSql.lastIndexOf(","));
+			whereSql.append(")  ");
+		}else{
+			whereSql.append(" 1=2 ");
 		}
 		pm = baseService.findScrollData(
 				orderBy,whereSql.toString(),params.toArray());

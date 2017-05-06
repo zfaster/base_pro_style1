@@ -57,8 +57,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <input type="checkbox" name="checkbox" onclick="selectAll(this)"/>
         </div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">序号</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">姓名</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">时间</span></div></td>
+          <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">用户名</span></div></td>
+          <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">姓名</span></div></td>
+          <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">所属班级</span></div></td>
+          <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">时间</span></div></td>
           <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">内容</span></div></td>
           <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">基本操作</span></div></td>
       </tr>
@@ -69,8 +71,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <input type="checkbox" name="id" value="<s:property value="#obj.id"/>"/>
         </div></td>
         <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#stat.index+1"/></div></td>
-        <td height="15%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.student.realname"/></div></td>
-        <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:date name="#obj.createTime" format="yyyy-MM-dd HH:mm:ss" /></div></td>
+          <td height="15%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.student.username"/></div></td>
+          <td height="15%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.student.realname"/></div></td>
+          <td height="15%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.student.room.name"/></div></td>
+          <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:date name="#obj.createTime" format="yyyy-MM-dd HH:mm:ss" /></div></td>
           <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.content"/></div></td>
 
           <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
