@@ -17,8 +17,8 @@ public class Article {
     @Column
     @Renewable
     private String title;
-    @Column
     @Lob
+    @Column(columnDefinition="TEXT")
     @Renewable
     private String content;
     @Column

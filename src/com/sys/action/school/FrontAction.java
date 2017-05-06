@@ -1,11 +1,9 @@
 package com.sys.action.school;
 
-import com.sys.bean.school.ClassRoom;
-import com.sys.bean.school.IndexImage;
-import com.sys.bean.school.Message;
-import com.sys.bean.school.Student;
+import com.sys.bean.school.*;
 import com.sys.service.school.*;
 import com.sys.system.PagerModel;
+import com.sys.utils.HTMLSpirit;
 import com.sys.web.action.BaseAction;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
@@ -39,6 +37,8 @@ public class FrontAction extends BaseAction<Object>{
     private String username;
     private String password;
     private Message message;
+    private String pwd;
+    private String oldpwd;
     @Autowired
     private StudentService studentService;
     @Autowired
@@ -85,8 +85,29 @@ public class FrontAction extends BaseAction<Object>{
         LinkedHashMap<String, String> orderBy = new LinkedHashMap<>();
         orderBy.put("id","desc");
         pm = articleService.findScrollData(orderBy);
+        if(pm.getDatas()!=null){
+            for(Object art : pm.getDatas()){
+                Article article = (Article) art;
+                if(article.getContent()!=null){
+                    article.setContent(HTMLSpirit.delHTMLTag(article.getContent()));
+                }
+            }
+        }
         setPageInfo();
         return "newsList";
+    }
+    public void pwdModify(){
+        Student loginUser = (Student) ServletActionContext.getRequest().getSession().getAttribute("student");
+        if(!loginUser.getPassword().equals(oldpwd)){
+            sendMessage(ServletActionContext.getResponse(),"原始密码输入错误");
+            return ;
+        }
+        loginUser = studentService.find(loginUser.getId());
+        loginUser.setPassword(pwd);
+        studentService.update(loginUser);
+        ServletActionContext.getRequest().getSession().removeAttribute("student");
+        sendMessage(ServletActionContext.getResponse(),"true");
+
     }
     public String newsDetial(){
         object = articleService.find(id);
@@ -212,6 +233,22 @@ public class FrontAction extends BaseAction<Object>{
 
     public String getStudentName() {
         return studentName;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
+
+    public String getOldpwd() {
+        return oldpwd;
+    }
+
+    public void setOldpwd(String oldpwd) {
+        this.oldpwd = oldpwd;
     }
 
     public void setStudentName(String studentName) {

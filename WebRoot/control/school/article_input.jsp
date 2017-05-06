@@ -20,6 +20,7 @@
 <script type="text/javascript" src="control/js/jquery-plus-jquery-ui.js"></script> 
 <link type="text/css" rel="stylesheet" charset="utf-8" href="control/css/ui-sui.css" /> 
 <link rel="stylesheet" href="control/css/common.css" type="text/css"></link>
+<script type="text/javascript" src="control/ckeditor/ckeditor.js"></script>
 <script language="javascript" src="<%=request.getContextPath()%>/js/vilidata.js"></script>
 <title>新闻信息</title>
 </head>
@@ -52,7 +53,7 @@
 								<tr>
 									<td class="tdEditLabel">内容</td>
 									<td class="tdEditContent">
-										<textarea rows="5" cols="45" name="object.content" label="内容" notNull="true" >${object.content }</textarea>
+										<textarea rows="5" cols="45" id="object.content" name="object.content" label="内容" notNull="true" >${object.content }</textarea>
 									</td>
 
 								</tr>
@@ -73,4 +74,9 @@
 		</form>
 	</center>
 </body>
+<script>
+	CKEDITOR.replace( 'object.content' ,{
+		"filebrowserUploadUrl" : "/control/common/upload"
+	});
+</script>
 </html>

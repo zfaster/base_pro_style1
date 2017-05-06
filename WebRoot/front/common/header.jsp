@@ -16,6 +16,27 @@
             }
         })
     }
+    function nowTime(){
+        var nowDate = new Date();
+        var year = nowDate.getFullYear();
+        var month = nowDate.getMonth()+1;
+        month = month>9 ? month : "0" + month;
+        var date = nowDate.getDate();
+        date = date>9 ? date : "0" + date;
+        var hour = nowDate.getHours();
+        hour = hour>9 ? hour : "0" + hour;
+        var miunte = nowDate.getMinutes();
+        miunte = miunte>9 ? miunte : "0" + miunte;
+        var second = nowDate.getSeconds();
+        second = second>9 ? second : "0" + second;
+
+        $("#time").text(year+"年"+month+"月"+date+"日"+hour+"时"+miunte+"分"+second+"秒");
+    }
+    //加载后执行一次函数，以后每秒再执行
+    $(function(){
+        nowTime();
+        setInterval("nowTime()", 1000);
+    });
 </script>
 <div id="header">
     <div id="headertop">
@@ -42,6 +63,9 @@
             </s:else>
 
         </div>
+        <div id="time">
+            aaaaaaaaaa
+         </div>
     </div>
     <div id="placemainmenu">
         <ul id="mainmenu">
@@ -54,7 +78,10 @@
             <s:if test="#session.student!=null">
                 <li <c:if test="${param.target eq 'contact'}">class="active"</c:if>><a href="${ctx}/front/student!searchStudent">校友录</a></li>
                 <li <c:if test="${param.target eq 'user'}">class="active"</c:if>><a href="${ctx}/front/user.jsp">我的信息</a></li>
-
+                <li <c:if test="${param.target eq 'pwd'}">class="active"</c:if>><a href="${ctx}/front/pwd.jsp">密码修改</a></li>
+            </s:if>
+            <s:if test="#session.student==null">
+                <li <c:if test="${param.target eq 'register'}">class="active"</c:if>><a href="${ctx}/front/student!registerInput">用户注册</a></li>
             </s:if>
         </ul>
         <s:if test="#session.student!=null">

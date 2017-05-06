@@ -93,7 +93,9 @@
 </script>
 <div id="container">
 	<div id="wrapper">
-		<jsp:include page="common/header.jsp"/>
+		<jsp:include page="common/header.jsp">
+			<jsp:param name="target" value="register"/>
+		</jsp:include>
 		<div id="content">
 			<div id="maincontent">
 				<div class="boxbig">

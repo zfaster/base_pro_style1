@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </table></td>
             <td><div align="right"><span class="STYLE1">
              &nbsp;&nbsp;
-                <img src="control/images/add.gif" width="10" height="10" /><a href="javascript:openWin('${actionPath}!updateInput','添加',600,200,1)">添加</a>
+                <img src="control/images/add.gif" width="10" height="10" /><a href="javascript:openWin('${actionPath}!updateInput','添加',800,400,1)">添加</a>
     &nbsp;   &nbsp;
              <img src="control/images/del.gif" width="10" height="10" /> <a href="javascript:delAll('${actionPath}!delete','ids')">删除</a>    &nbsp;&nbsp;   &nbsp;
              </span><span class="STYLE1"> &nbsp;</span></div></td>
@@ -72,7 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <td height="15%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.title"/></div></td>
         <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
                 <a href="javascript:del('${actionPath}!delete?ids=<s:property value="#obj.id"/>')" title="">删除</a> |
-                <a href="javascript:openWin('${actionPath}!updateInput?id=<s:property value="#obj.id"/>','更新',600,200,1)" title="">编辑</a>
+                <a href="javascript:openWin('${actionPath}!updateInput?id=<s:property value="#obj.id"/>','更新',800,400,1)" title="">编辑</a>
         </div>
         </td>
       </tr>

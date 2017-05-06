@@ -45,7 +45,11 @@
 									</result>
 						</action>
 			</package>
-
+			<package name="common" namespace="/control/common"
+					 extends="abstract">
+				<action name="upload" class="ckeditorUploadAction">
+				</action>
+			</package>
 			<package name="school" namespace="/control/school"
 					 extends="abstract">
 				<action name="*" class="{1}Action">

@@ -52,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="boxbigcontent">
 						<ul id="listnews">
 							<li class="noborder">
-								<p><s:property value="object.content"/></p>
+								<p><s:property  escape="false" value="object.content"/></p>
 								<ul class="listinfodet">
 									<li ><s:date name="object.createTime" format="yyyy-MM-dd HH:mm:ss"/></li>
 								</ul>

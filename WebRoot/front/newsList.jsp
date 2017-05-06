@@ -58,12 +58,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</ul>
 									<p>
                                         <s:if test="#obj.content.length() > 60">
-                                            <s:property value="#obj.content.substring(0,60)"/>
+                                            <s:property escape="false" value="#obj.content.substring(0,60)"/>...
                                         </s:if>
                                         <s:else>
-                                            <s:property value="#obj.content"/>
-                                        </s:else>
-                                        <s:property value="#obj.content"/> </p>
+                                            <s:property escape="false" value="#obj.content"/>
+                                        </s:else> </p>
 									<a href="${ctx}/front/student!newsDetial?id=<s:property value="#obj.id"/>" class="linkreadmore">查看全部</a>
 									<div class="clear"></div>
 								</li>
