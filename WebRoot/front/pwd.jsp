@@ -50,6 +50,10 @@
 			alert('新密码不可为空');
 			return;
 		}
+        if($('#pwd').val().length<6){
+            alert('密码长度必须6位数以上');
+            return;
+        }
 		if(!$('#ckpwd').val()){
 			alert('确认密码不可为空');
 			return;

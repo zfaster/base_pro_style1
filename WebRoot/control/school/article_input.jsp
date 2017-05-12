@@ -20,7 +20,7 @@
 <script type="text/javascript" src="control/js/jquery-plus-jquery-ui.js"></script> 
 <link type="text/css" rel="stylesheet" charset="utf-8" href="control/css/ui-sui.css" /> 
 <link rel="stylesheet" href="control/css/common.css" type="text/css"></link>
-<script type="text/javascript" src="control/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <script language="javascript" src="<%=request.getContextPath()%>/js/vilidata.js"></script>
 <title>新闻信息</title>
 </head>
@@ -76,7 +76,7 @@
 </body>
 <script>
 	CKEDITOR.replace( 'object.content' ,{
-		"filebrowserUploadUrl" : "/control/common/upload"
+		"filebrowserUploadUrl" : "/common/upload"
 	});
 </script>
 </html>

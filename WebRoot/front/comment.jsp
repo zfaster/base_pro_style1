@@ -26,6 +26,7 @@
 	<script src="script/ui_tabs.js" type="text/javascript"></script>
 	<script src="script/lightbox.js" type="text/javascript"></script>
 	<script src="script/twitter.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			$("#butslide").click(function(){
@@ -61,7 +62,7 @@
 									<div class="placecomment">
 										<h3><strong><s:property value="#obj.student.realname"/></strong>, <s:property value="#obj.student.room.name"/>, <s:date name="#obj.createTime" format="yyyy-MM-dd HH:mm:ss"/></h3>
 										<p>
-											<s:property value="#obj.content"/>
+											<s:property  escape="false" value="#obj.content"/>
 										</p>
 									</div>
 									<div class="clear"></div>
@@ -76,8 +77,7 @@
 						<h2 class="subtitle">发表留言</h2>
 						<form method="post" action="${ctx}/front/student!comment" id="frmcomment">
 							<div>
-								<label for="lblcomment">内容 </label>
-								<textarea name="message.content" cols="80" rows="10" id="lblcomment" class="textareacomment"></textarea><br />
+								<textarea name="message.content" cols="80" rows="10" id="message.content" class="textareacomment"></textarea><br />
 								<input type="submit" name="submitcomment" class="submitcomment" value="发表留言" />
 							</div>
 						</form>
@@ -91,6 +91,12 @@
 		<jsp:include page="common/footer.jsp"/>
 	</div>
 </div>
-
+<script>
+    <s:if test="#session.student!=null">
+        CKEDITOR.replace( 'message.content' ,{
+            "filebrowserUploadUrl" : "/common/upload"
+        });
+	</s:if>
+</script>
 </body>
 </html>

@@ -50,10 +50,18 @@
 			alert('用户名不可为空');
 			return;
 		}
+        if($('#userName').val().length!=8){
+            alert('用户名必须是8位数的学号');
+            return;
+        }
 		if(!$('#newpassword').val()){
-			alert('密码不可为空');
-			return;
-		}
+            alert('密码不可为空');
+            return;
+        }
+        if($('#newpassword').val().length<6){
+            alert('密码长度必须6位数以上');
+            return;
+        }
 		if(!$('#realname').val()){
 			alert('姓名不可为空');
 			return;
@@ -103,10 +111,11 @@
 					<div class="boxbigcontent">
 						<form method="post" action="${ctx}/front/student!register" enctype="multipart/form-data"  id="frmcontact">
 							<div>
-								<label>用户名:</label> <input type="text" id="userName" name="student.username" class="textboxcontact"/> <br />
+								<label>用户名（学号）:</label> <input type="text" id="userName" name="student.username" class="textboxcontact"/> <br />
 								<label >密码:</label> <input type="password" id="newpassword" name="student.password" class="textboxcontact" /> <br />
 								<label>确认密码:</label> <input type="password" id="repassword" name="repassword" class="textboxcontact" /> <br />
 								<label>姓名:</label> <input type="text" id="realname" name="student.realname" class="textboxcontact"/> <br />
+								<label>性别:</label> <select  class="textboxcontact"   name="student.sex"><option value="0">女</option><option value="1">男</option></select><br />
 								<label >电话:</label> <input type="text" id="phone" name="student.phone" class="textboxcontact" /><br />
 								<label>地址:</label> <input type="text" id="address" name="student.address" class="textboxcontact"  /><br />
 								<label>头像:</label> <input type="file"  name="image" class="textboxcontact"  /><br />

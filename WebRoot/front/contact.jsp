@@ -63,9 +63,14 @@
 										<img src="/<s:property value="#obj.getImagePath()" />" width="100" height="100" alt="<s:property value="#obj.realname"/>" />
 									</s:else>
 									<br />
-									姓名:<s:property value="#obj.realname"/>
+									姓名：<s:property value="#obj.realname"/>&nbsp;
+									性别：<s:if test="#obj.sex==1">男</s:if><s:else>女</s:else>
+									<br />
+									学号：<s:property value="#obj.username"/>
                                     <br />
                                     电话：<s:property value="#obj.phone"/>
+									<br />
+									地址：<s:property value="#obj.address"/>
                                 </a>
 
 								</li>
@@ -88,7 +93,7 @@
 						<ul class="menunav">
 							<s:iterator var="obj" value="roomList" status="stat">
 
-								<li <s:if test="#stat.last"> class="last"</s:if>><a href="/front/student!searchStudent?roomId=<s:property value="#obj.id"/>&studentName=<s:property value="studentName"/>"><s:property value="#obj.name"/></a></li>
+								<li <s:if test="#stat.last"> class="last"</s:if>><a href="javascript:void(0)"><s:property value="#obj.name"/></a></li>
 
 							</s:iterator>
 						</ul>

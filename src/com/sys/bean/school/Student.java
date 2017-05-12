@@ -20,6 +20,8 @@ public class Student {
     @Column
     private String realname;
     @Column
+    private Integer sex;
+    @Column
     private String phone;
     @Column
     private String image;
@@ -62,6 +64,22 @@ public class Student {
 
     public String getUsername() {
         return username;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Integer getSex() {
+        return sex;
+    }
+
+    public void setSex(Integer sex) {
+        this.sex = sex;
     }
 
     public void setUsername(String username) {
