@@ -125,6 +125,7 @@ public class FrontAction extends BaseAction<Object>{
         loginUser.setAddress(student.getAddress());
         loginUser.setPhone(student.getPhone());
         loginUser.setRealname(student.getRealname());
+        loginUser.setSex(student.getSex());
         if(image != null){
             if(!checkFileType(imageContentType,imageFileName)) throw new RuntimeException("请上传图片文件");
             String path = ServletActionContext.getServletContext().getRealPath(loginUser.getSavePath());

@@ -76,6 +76,7 @@
 						<form method="post" action="${ctx}/front/student!modify" enctype="multipart/form-data"  id="frmcontact">
 							<div>
 								<label>姓名:</label> <input type="text" id="realname" name="student.realname" value="<s:property value="#session.student.realname"/>" class="textboxcontact"/> <br />
+								<label>性别:</label> <select  class="textboxcontact"  id="sex" name="student.sex"><option value="0" <s:if test="#session.student.sex==0">selected</s:if> >女</option><option <s:if test="#session.student.sex==1">selected</s:if> value="1">男</option></select><br />
 								<label >电话:</label> <input type="text" id="phone" name="student.phone" value="<s:property value="#session.student.phone"/>" class="textboxcontact" /><br />
 								<label>地址:</label> <input type="text" id="address" name="student.address" value="<s:property value="#session.student.address"/>" class="textboxcontact"  /><br />
 								<label>头像:</label> <input type="file"  name="image" class="textboxcontact"  /><br />
