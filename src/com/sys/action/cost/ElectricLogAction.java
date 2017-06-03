@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -53,7 +54,11 @@ public class ElectricLogAction extends BaseAction<ElectricLog> {
     }
 
     public void setRoomCode(String roomCode) {
-        this.roomCode = roomCode;
+        try {
+            this.roomCode = new String(roomCode.getBytes("iso8859-1"),"utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getActionPath() {

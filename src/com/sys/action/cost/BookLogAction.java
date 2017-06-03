@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -61,7 +62,11 @@ public class BookLogAction extends BaseAction<BookLog> {
     }
 
     public void setCardNo(String cardNo) {
-        this.cardNo = cardNo;
+        try {
+            this.cardNo = new String(cardNo.getBytes("iso8859-1"),"utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getActionPath() {

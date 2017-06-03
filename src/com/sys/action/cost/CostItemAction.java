@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -83,7 +84,11 @@ public class CostItemAction extends BaseAction<CostItem> {
     }
 
     public void setCardNo(String cardNo) {
-        this.cardNo = cardNo;
+        try {
+            this.cardNo = new String(cardNo.getBytes("iso8859-1"),"utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 
     public CostType getCostType() {

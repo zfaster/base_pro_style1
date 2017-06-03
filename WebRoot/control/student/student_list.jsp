@@ -149,7 +149,7 @@ function changState(button){
     <td height="30">
 		<jsp:include page="/control/common/pager.jsp">
 			<jsp:param name="url" value="control/student/student"/>
-			<jsp:param name="params" value="code"/>
+			<jsp:param name="params" value="name,cardNo"/>
 		</jsp:include>
     </td>
  </tr>

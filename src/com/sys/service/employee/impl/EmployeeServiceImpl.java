@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import com.sys.bean.privilege.Employee;
 import com.sys.service.base.DaoSupport;
 import com.sys.service.employee.EmployeeService;
-import com.sys.utils.MD5;
 @Service("employeeService")
 public class EmployeeServiceImpl extends DaoSupport<Employee> implements
 		EmployeeService {

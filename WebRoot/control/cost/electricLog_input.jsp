@@ -20,7 +20,7 @@
 <link type="text/css" rel="stylesheet" charset="utf-8" href="control/css/ui-sui.css" /> 
 <link rel="stylesheet" href="control/css/common.css" type="text/css"/>
 <script language="javascript" src="<%=request.getContextPath()%>/js/vilidata.js"></script>
-<title>用电等级</title>
+<title>用电登记</title>
 </head>
 <body onload="init()">
 	<center>
