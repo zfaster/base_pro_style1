@@ -1,8 +1,3 @@
-/**
- * Copyright (c) 2015-2019 http://git.oschina.net/java-home
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License");
- */
 package com.sys.action.student;
 
 import com.sys.bean.student.Room;
@@ -55,8 +50,6 @@ public class RoomAction extends BaseAction<Room> {
 
     public String saveMoney(){
         if(money!=null && id !=null){
-            object = baseService.find(id);
-            object.setPrepay(object.getPrepay().add(money));
             ((RoomService)baseService).addMoneyToRoom(id,cardId,money);
             return "update_success";
         }

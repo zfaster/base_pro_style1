@@ -1,6 +1,5 @@
 package com.sys.service.student.impl;
 
-import com.sys.bean.student.Card;
 import com.sys.bean.student.Room;
 import com.sys.enums.CostType;
 import com.sys.service.base.DaoSupport;
@@ -29,8 +28,8 @@ public class RoomServiceImpl extends DaoSupport<Room> implements
      */
     @Override
     public void addMoneyToRoom(Integer roomId, Integer cardId, BigDecimal money){
-        Room room = get(roomId);
-        cardService.cost(cardId,money,CostType.ENERGY);
+        Room room = find(roomId);
+        cardService.cost(cardId,money,CostType.ELECTR);
         room.setPrepay(room.getPrepay().add(money));
         update(room);
     }

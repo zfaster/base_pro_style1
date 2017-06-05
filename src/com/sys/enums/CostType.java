@@ -5,7 +5,7 @@ package com.sys.enums;
  */
 public enum CostType {
     SAVE("充值"),
-    ENERGY("电费"),
+    ELECTR("电费"),
     WATER("水费"),
     SHOP("超市购物"),
     EAT("餐厅消费"),

@@ -85,7 +85,14 @@
             <result>/control/cost/waterLog_list.jsp</result>
             <result name="input">/control/cost/waterLog_input.jsp</result>
         </action>
-
+        <action name="electricLog" class="electricLogAction">
+            <result>/control/cost/electricLog_list.jsp</result>
+            <result name="input">/control/cost/electricLog_input.jsp</result>
+        </action>
+        <action name="bookLog" class="bookLogAction">
+            <result>/control/cost/bookLog_list.jsp</result>
+            <result name="input">/control/cost/bookLog_input.jsp</result>
+        </action>
     </package>
 
 </struts>    

@@ -1,11 +1,10 @@
 package com.sys.action.cost;
 
 import com.sys.bean.cost.BookLog;
-import com.sys.bean.cost.WaterLog;
+import com.sys.bean.cost.ElectricLog;
 import com.sys.service.base.DAO;
-import com.sys.service.cost.WaterLogService;
+import com.sys.service.cost.ElectricLogService;
 import com.sys.web.action.BaseAction;
-import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -18,10 +17,9 @@ import java.util.List;
 
 @Controller
 @Scope("prototype")
-public class WaterLogAction extends BaseAction<WaterLog> {
-    private String actionPath = "control/cost/waterLog";
-    private String cardNo;
-    private Integer cardId;
+public class ElectricLogAction extends BaseAction<ElectricLog> {
+    private String actionPath = "control/cost/electricLog";
+    private String roomCode;
     private boolean select;
     @Override
     public String execute() throws Exception {
@@ -29,9 +27,9 @@ public class WaterLogAction extends BaseAction<WaterLog> {
         orderBy.put("id", "desc");
         StringBuffer whereSql = new StringBuffer(" 1 = 1 ");
         List<Object> params = new ArrayList<Object>();
-        if(StringUtils.hasText(cardNo)){
-            whereSql.append("and o.card.no like ? ");
-            params.add("%"+ cardNo +"%");
+        if(StringUtils.hasText(roomCode)){
+            whereSql.append("and o.room.code like ? ");
+            params.add("%"+ roomCode +"%");
         }
         pm = baseService.findScrollData(
                 orderBy,whereSql.toString(),params.toArray());
@@ -41,26 +39,21 @@ public class WaterLogAction extends BaseAction<WaterLog> {
 
     @Override
     public String update() throws Exception {
-        ((WaterLogService)baseService).beginUseWater(cardId);
+        ((ElectricLogService)baseService).useElectric(object.getRoom().getId(),object.getDegree(),object.getYear(),object.getMonth());
         return "update_success";
     }
 
-    public void endUseWater() throws Exception {
-        WaterLog log = ((WaterLogService)baseService).endUseWater(cardId);
-        sendMessage(ServletActionContext.getResponse(),"停止用水，共计消费："+log.getCost()+"元");
-    }
-
-    @Resource(name="waterLogService")
+    @Resource(name="electricLogService")
     public void setBaseService(DAO baseService) {
         this.baseService = baseService;
     }
 
-    public String getCardNo() {
-        return cardNo;
+    public String getRoomCode() {
+        return roomCode;
     }
 
-    public void setCardNo(String cardNo) {
-        this.cardNo = cardNo;
+    public void setRoomCode(String roomCode) {
+        this.roomCode = roomCode;
     }
 
     public String getActionPath() {
@@ -73,14 +66,6 @@ public class WaterLogAction extends BaseAction<WaterLog> {
 
     public void setSelect(boolean select) {
         this.select = select;
-    }
-
-    public Integer getCardId() {
-        return cardId;
-    }
-
-    public void setCardId(Integer cardId) {
-        this.cardId = cardId;
     }
 
     public void setActionPath(String actionPath) {

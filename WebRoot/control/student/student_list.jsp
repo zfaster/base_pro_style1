@@ -117,10 +117,11 @@ function changState(button){
         <td height="20%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.name"/></div></td>
           <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.sex.name"/></div></td>
           <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.card.no"/></div></td>
+          <td height="10%" bgcolor="#FFFFFF" class="STYLE19">
           <s:if test="#obj.card!=null">
-              <td height="10%" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="#obj.card.money"/></div></td>
-
+              <div align="center"><s:property value="#obj.card.money"/></div>
           </s:if>
+          </td>
           <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
               <a href="javascript:del('${actionPath}!delete?ids=<s:property value="#obj.id"/>')" title="">删除</a> |
               <s:if test="#obj.card==null">

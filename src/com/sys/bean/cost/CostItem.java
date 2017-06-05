@@ -1,8 +1,3 @@
-/**
- * Copyright (c) 2015-2019 http://git.oschina.net/java-home
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License");
- */
 package com.sys.bean.cost;
 
 import com.sys.bean.student.Card;

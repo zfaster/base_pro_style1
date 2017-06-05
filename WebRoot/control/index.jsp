@@ -44,8 +44,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li id="now51"><a href="control/cost/costItem?costType=SHOP" onClick="go_cmdurl('超市消费',this)" target="content1" title="超市消费">超市消费</a></li>
 					<li id="now51"><a href="control/cost/costItem?costType=EAT" onClick="go_cmdurl('食堂消费',this)" target="content1" title="食堂消费">食堂消费</a></li>
 					<li id="now22"><a href="control/cost/waterLog" onClick="go_cmdurl('用水消费',this)" target="content1" title="用水消息">用水消费</a></li>
-					<li id="now22"><a href="" onClick="go_cmdurl('用电消费',this)" target="content1" title="用电消费">用电消费</a></li>
-					<li id="now24"><a href="" onClick="go_cmdurl('图书借阅',this)" target="content1" title="图书借阅">图书借阅</a></li>
+					<li id="now22"><a href="control/cost/electricLog" onClick="go_cmdurl('用电消费',this)" target="content1" title="用电消费">用电消费</a></li>
+					<li id="now24"><a href="control/cost/bookLog" onClick="go_cmdurl('图书借阅',this)" target="content1" title="图书借阅">图书借阅</a></li>
 				</ul>
 			</div>
 			<div class="clear"></div>

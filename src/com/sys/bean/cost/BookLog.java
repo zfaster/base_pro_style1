@@ -1,8 +1,3 @@
-/**
- * Copyright (c) 2015-2019 http://git.oschina.net/java-home
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License");
- */
 package com.sys.bean.cost;
 
 import com.sys.bean.student.Card;
@@ -25,7 +20,7 @@ public class BookLog {
     @Column(name = "book_no")
     private String bookNo;
     @Column(name = "begin_time")
-    private Date beginTime;
+    private Date beginTime = new Date();
     @Column(name = "end_time")
     private Date endTime;
     @Column
